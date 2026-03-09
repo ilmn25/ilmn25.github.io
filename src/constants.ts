@@ -50,7 +50,7 @@ export const PROJECT_NAV = [
 
 export const SKILLS: SkillGroup[] = [
   {
-    category: "Languages",
+    category: "Spoken Languages",
     skills: [
       "Native English",
       "Native Cantonese",
@@ -59,32 +59,62 @@ export const SKILLS: SkillGroup[] = [
     ],
   },
   {
-    category: "Frontend",
-    skills: ["React", "React Native", "Vite", "Tailwind", "Google AI Studio"],
+    category: "Languages",
+    skills: [
+      "Python",
+      "JavaScript/TypeScript",
+      "C#",
+      "C/C++",
+      "Java",
+      "Lua",
+      "HTML",
+      "CSS",
+    ],
   },
   {
-    category: "Backend & Full stack",
-    skills: ["Node.js", "FastAPI", "Next.js", "MongoDB", "PostgreSQL"],
+    category: "Frameworks",
+    skills: [
+      "Node.js",
+      "React",
+      "React Native",
+      "FastAPI",
+      "Next.js",
+      "Vite",
+      "Tailwind",
+    ],
   },
   {
-    category: "Cloud & Platforms",
-    skills: ["AWS (IAM, ECS, ECR, S3)", "Supabase", "Vercel", "Stripe"],
+    category: "Cloud & DevOps",
+    skills: [
+      "AWS (IAM, ECS, ECR, S3)",
+      "Docker",
+      "Git",
+      "GitHub Actions",
+      "Supabase",
+      "Vercel",
+    ],
   },
   {
-    category: "DevOps & VCS",
-    skills: ["Docker", "GitHub Actions", "Git"],
+    category: "AI & Databases",
+    skills: ["MCP", "RAG", "Pinecone", "PostgreSQL", "MySQL", "MongoDB"],
   },
   {
-    category: "Game Development",
-    skills: ["Unity", "Godot", "Defold"],
+    category: "Virtual Machines & OS",
+    skills: ["VirtualBox", "VMWare", "Windows Server 2022"],
   },
   {
-    category: "AI & Tools",
-    skills: ["MCP", "RAG", "Pinecone", "OpenClaw"],
+    category: "Tools",
+    skills: ["Unity", "Stripe", "Word", "Excel", "Lark", "Zoom"],
   },
   {
-    category: "Design & Graphics",
-    skills: ["Clip Studio Paint", "Canva", "Figma"],
+    category: "Design",
+    skills: [
+      "Figma",
+      "Canva",
+      "Photoshop",
+      "After Effects",
+      "Clip Studio Paint",
+    ],
   },
 ];
 
@@ -93,15 +123,13 @@ export const PROJECTS: Project[] = [
     id: "illubot",
     title: "illubot",
     description:
-      "A custom-built high-performance MCP AI agent.",
+      "A high‑performance MCP AI personal agent capable of reducing daily workload for multi‑step digital tasks.",
     category: "ai",
     tags: ["AI Agent", "MCP", "LLM", "RAG", "Pinecone", "Vector DB"],
     highlights: [
-      "A comprehensive toolset for Google Calendar, Gmail, Github, system-level commands, and more.",
-      "Real time voice activation and access from Discord Bot.",
-      "Long-term memory retrieval architecture utilizing RAG with Pinecone vector database.",
-      "Native support for LLM providers including GitHub, OpenAI, Ollama, and Gemini.",
-      "Built for high reliability, capable of executing multi-step tasks autonomously.",
+      "Integrated support for multiple LLM providers, enabling cost‑free usage by seamlessly switching between endpoints when the free tier of one provider is temporarily exhausted.",
+      "Introduced hands free use via voice command, or remote access via Discord Bot.",
+      "Implemented long-term memory retrieval utilizing RAG with Pinecone vector database.",
     ],
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/260228" }],
   },
@@ -109,7 +137,7 @@ export const PROJECTS: Project[] = [
     id: "discord-tool",
     title: "Discord Message Tool",
     description:
-      "A cloud-native web app for automating posts across many channels on Discord.",
+      "An automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
     tags: [
       "FastAPI",
@@ -121,25 +149,23 @@ export const PROJECTS: Project[] = [
       "GitHub Actions",
     ],
     highlights: [
-      "A cloud-native web app for automating posts across many channels on Discord.",
-      "Hosted on AWS ECS Fargate with Docker containerization.",
-      "Integrated CI/CD pipeline via GitHub Actions.",
+      "Developed a system that automates organic marketing by posting across multiple Discord servers, reducing effort from 2–3 hours to just minutes after setup.",
+      "Implemented containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
     ],
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/251128" }],
   },
   {
     id: "unity-game",
-    title: "3D Unity Game",
+    title: "2.5D Survival Game Project",
     description:
-      "A game project with procedural systems and interconnected behavioral algorithms.",
+      "A survival game featuring infinite procedural generation and optimized map partitioning.",
     category: "game",
     tags: ["Unity", "C#"],
     highlights: [
-      "An optimized map partitioning system that manages world data in 3D chunks, enabling infinite procedural world generation.",
-      "A custom-made set of DevTools for speeding up asset creation and systems testing.",
-      "An advanced Pathfinding Algorithm and Navigation system, designed for 3D Voxel Maps where Unity's NavMesh fails, such as real time parkour.",
-      "Integration with Unity's Job System and Burst Compiler to offload heavy computations, maintaining 200-300+ FPS on Average with no Frame Drops.",
-      "Save and Load system that can maintain the World's Map, Inventory, all Entity Behaviours, and other Metadata.",
+      "Built an optimized map partitioning system that manages world data in 3D chunks, enabling near-infinite procedural world generation.",
+      "Developed a custom set of DevTools for streamlining asset creation and debugging, boosting the speed of adding content by ~80%.",
+      "Designed interconnected pathfinding and behavioral algorithms to address limitations in Unity’s NavMesh, including heuristics for parkour.",
+      "Integrated Unity's Job System and Burst Compiler to offload heavy computations, allowing the game to run at 200-400 FPS with no frame drops on a mid-end PC.",
     ],
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/240809" }],
   },
@@ -213,9 +239,10 @@ export const EXPERIENCES: Experience[] = [
     period: "Jan 2026 – Present",
     type: "Part-time",
     description: [
-      "Sole developer of an internal end-to-end ERP and CRM application, covering bookings and attendance management, RBAC, payment discrepancy system, and more.",
-      "Researched, bought, and integrated biometric scanning hardware support to automate check-in and improve data accuracy.",
-      "Collaborated directly with business stakeholders to prioritize requirements and deliver iterative releases.",
+      "Developing an internal end-to-end ERP and CRM system, replacing manual spreadsheet workflows and saving staff ~30 hours per month.",
+      "Researched, procured, and integrated biometric scanning hardware to enable self check-in for younger students, fully automating attendance and eliminating manual entry errors.",
+      "Collaborating with staff and owners to understand the pain points of their workflow, and deliver iterative releases that increasingly cuts down turnaround time.",
+      "Reliably integrated features in a live environment with sensitive data, including attendance tracking, RBAC, payment discrepancy detection, and rollback systems.",
     ],
   },
   {
@@ -224,10 +251,10 @@ export const EXPERIENCES: Experience[] = [
     period: "Dec 2025 – Jan 2026",
     type: "Full-time",
     description: [
-      "Developed core app modules within the Unity framework and existing codebase. including settings, localization, game content pipeline, and more.",
-      "Collaborated with leadership to scope and prioritize sprint tasks, complete planned deliverables on schedule.",
-      "Authored and reviewed technical specifications and onboarding documentation, reducing handover friction and shortening intern ramp-up time.",
-      "Diagnosed and resolved workflow issues in assets creation, improving UX quality and reducing art and animation rework.",
+      "Completed all assigned modules 4 days ahead of schedule, including settings, localization, content data pipelines and other core components.",
+      "Audited outdated specifications and wrote onboarding documentation for future interns, greatly reducing handover friction and shortening ramp-up time from 2 weeks to 3-4 days.",
+      "Spotted and resolved issues in the asset creation pipeline, helping design interns unfamiliar with best practices avoid ~3 days of wasted work.",
+      "Reshaped long-term project direction through providing insight on the budget and scalability of different visual styles to the director during group meetings.",
     ],
   },
   {
@@ -236,8 +263,8 @@ export const EXPERIENCES: Experience[] = [
     period: "Jan 2023 – Present",
     type: "Freelance",
     description: [
-      "Delivered concept sketches and character art for online clients with consistent on-time completion.",
-      "Managed end-to-end project communication, revisions, and delivery across multiple concurrent commissions.",
+      "Secured repeat clients by consistently delivering high‑quality concept sketches and character art within 2-4 days.",
+      "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.",
     ],
   },
 ];
