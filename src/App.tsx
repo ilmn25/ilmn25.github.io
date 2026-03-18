@@ -19,7 +19,6 @@ import {
 } from "./constants";
 import {
   Github,
-  Linkedin,
   Twitter,
   Instagram,
   Palette,
@@ -401,6 +400,15 @@ const App: React.FC = () => {
                   <RevealOnScroll direction="up" delay={500}>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10">
                       <a
+                        href={(PERSONAL_INFO.social as any).resume}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Resume"
+                        className={socialIconClass}
+                      >
+                        <FileText className="w-6 h-6" />
+                      </a>
+                      <a
                         href={PERSONAL_INFO.social.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -408,15 +416,6 @@ const App: React.FC = () => {
                         className={socialIconClass}
                       >
                         <Github className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={PERSONAL_INFO.social.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn Profile"
-                        className={socialIconClass}
-                      >
-                        <Linkedin className="w-6 h-6" />
                       </a>
                       <a
                         href={PERSONAL_INFO.social.twitter}
@@ -444,15 +443,6 @@ const App: React.FC = () => {
                         className={socialIconClass}
                       >
                         <Youtube className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={(PERSONAL_INFO.social as any).resume}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Resume"
-                        className={socialIconClass}
-                      >
-                        <FileText className="w-6 h-6" />
                       </a>
                     </div>
                   </RevealOnScroll>
