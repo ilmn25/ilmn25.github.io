@@ -262,6 +262,12 @@ export const EXPERIENCES: Experience[] = [
       "Reshaped long-term project direction through providing insight on the budget and scalability of different visual styles to the director during group meetings.",
       "Audited outdated specifications and wrote onboarding documentation for future interns, greatly reducing handover friction and shortening ramp-up time from 2 weeks to 3-4 days.",
     ],
+    links: [
+      {
+        label: "Work Proof Survey",
+        url: "https://drive.google.com/file/d/1W13QO1ru_nBYM8w-aaxUVdNtevZwl_wx/view?usp=sharing",
+      },
+    ],
   },
   {
     company: "Freelance",
