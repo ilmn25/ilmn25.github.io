@@ -539,7 +539,7 @@ const App: React.FC = () => {
                       className="relative pl-10"
                     >
                       <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-slate-900 border-4 border-white"></div>
-                      <div className="relative bg-white p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/5">
+                      <div className="relative bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/5 flex flex-col h-full">
                         <div className="flex justify-between items-start gap-4 mb-1.5">
                           <span className="text-slate-400 font-mono text-xs">
                             {exp.period.includes("Present") ? (
@@ -565,7 +565,7 @@ const App: React.FC = () => {
                         <p className="text-slate-600 font-semibold text-sm mb-3 leading-normal">
                           {exp.company}
                         </p>
-                        <ul className="space-y-1.5 mb-4">
+                        <ul className="space-y-1.5 mb-6">
                           {exp.description.map((item, j) => (
                             <li
                               key={j}
@@ -579,16 +579,16 @@ const App: React.FC = () => {
                           ))}
                         </ul>
                         {exp.links && exp.links.length > 0 && (
-                          <div className="flex flex-wrap gap-3 pt-3 border-t border-slate-50">
+                          <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-slate-50">
                             {exp.links.map((link, j) => (
                               <a
                                 key={j}
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-1.5 text-[10px] font-bold text-slate-900 hover:text-slate-600 transition-all uppercase tracking-wider"
+                                className="flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-slate-600 transition-all"
                               >
-                                <ExternalLink className="w-3 h-3" />
+                                <ExternalLink className="w-3.5 h-3.5" />
                                 {link.label}
                               </a>
                             ))}
