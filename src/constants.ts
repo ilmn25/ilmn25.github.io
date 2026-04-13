@@ -243,12 +243,18 @@ export const EXPERIENCES: Experience[] = [
     company: "Time Super Centre",
     role: "Full Stack Engineer & IT Support",
     period: "Jan. 2026 – Present",
-    type: "Full-time",
+    type: "Part-time",
     description: [
       "Developing an internal ERP/CRM administrative system with React, PostgreSQL, and Supabase, replacing manual spreadsheet workflows and saving staff 30+ hours per month.",
       "Reliably integrated features in a live environment with 1200+ booking data entries, including attendance tracking, RBAC, payment reconciliation, and rollback systems.",
       "Researched, procured, and integrated biometric scanning hardware to enable self check-in for younger students, fully automating attendance and eliminating manual entry errors.",
       "Collaborating with staff and owners to understand the pain points of their workflow, and deliver iterative releases that increasingly cuts down turnaround time.",
+    ],
+    links: [
+      {
+        label: "Showcase",
+        url: "#tutor-db",
+      },
     ],
   },
   {
@@ -264,7 +270,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     links: [
       {
-        label: "Work Proof Survey",
+        label: "Internship Report",
         url: "https://drive.google.com/file/d/1W13QO1ru_nBYM8w-aaxUVdNtevZwl_wx/view?usp=sharing",
       },
     ],
