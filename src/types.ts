@@ -18,6 +18,10 @@ export interface Experience {
   period: string;
   description: string[];
   type?: "Full-time" | "Part-time" | "Freelance";
+  links?: {
+    label: string;
+    url: string;
+  }[];
 }
 
 export interface SkillGroup {

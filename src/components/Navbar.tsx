@@ -284,22 +284,6 @@ const Navbar: React.FC<NavbarProps> = ({
                   </div>
                 )}
               </div>
-
-              <a
-                href="https://ilmn25.github.io/store/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 bg-slate-900 text-white ml-2 px-4 py-2.5 rounded-full text-[11px] font-bold transition-all duration-200 shadow-lg shadow-slate-200/40 hover:scale-105 active:scale-95 hover:bg-black"
-              >
-                <div className="relative">
-                  <Sparkles className="w-3.5 h-3.5 transition-transform duration-500 group-hover:rotate-12 text-white" />
-                  <span className="absolute -top-1 -right-1 flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-                  </span>
-                </div>
-                <span className="tracking-wider">ILMNNNNNNNN</span>
-              </a>
             </div>
           </div>
         </div>
@@ -328,22 +312,6 @@ const Navbar: React.FC<NavbarProps> = ({
         )}
 
         <div className="fixed top-3 right-3 z-[60] flex items-center gap-2">
-          <a
-            href="https://ilmn25.github.io/store/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 bg-slate-900 text-white px-3 py-2 rounded-xl text-[9px] font-bold transition-all duration-200 shadow-lg active:scale-95 hover:bg-black"
-          >
-            <div className="relative">
-              <Sparkles className="w-3 h-3 text-white" />
-              <span className="absolute -top-1 -right-1 flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-              </span>
-            </div>
-            <span className="tracking-wider">ILMNNNNNNNN</span>
-          </a>
-
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="w-10 h-10 flex items-center justify-center bg-slate-900 text-white rounded-xl shadow-lg active:scale-90 transition-all hover:bg-black"

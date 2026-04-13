@@ -561,8 +561,19 @@ const App: React.FC = () => {
                         <h3 className="text-lg font-bold text-slate-900 mb-0.5">
                           {exp.role}
                         </h3>
-                        <p className="text-slate-600 font-semibold text-sm mb-3 leading-normal">
+                        <p className="text-slate-600 font-semibold text-sm mb-3 leading-normal flex flex-wrap items-center gap-2">
                           {exp.company}
+                          {exp.links?.map((link, j) => (
+                            <a
+                              key={j}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-indigo-500 hover:text-indigo-700 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 bg-indigo-50 rounded border border-indigo-100 transition-colors"
+                            >
+                              {link.label}
+                            </a>
+                          ))}
                         </p>
                         <ul className="space-y-1.5">
                           {exp.description.map((item, j) => (
