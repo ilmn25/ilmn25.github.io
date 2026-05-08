@@ -18,9 +18,6 @@ export const PERSONAL_INFO = {
   },
   social: {
     github: "https://github.com/ilmn25",
-    twitter: "https://x.com/ilmn25/",
-    instagram: "https://www.instagram.com/ilmnnnnnnnnnn/",
-    youtube: "https://www.youtube.com/@ilmn25",
     resume:
       "https://docs.google.com/document/d/1EXzindBoId3J1ePtDNtXYuC0-K_bDDBOZi4cdc-akdk/edit?usp=sharing",
   },
@@ -44,7 +41,7 @@ export const PROJECT_NAV = [
     label: "SPA Specifications Generator",
     category: "Automation",
   },
-  { id: "illustrations", label: "Digital Illustrations", category: "Art" },
+  { id: "illustrations", label: "Digital Art", category: "Art" },
 ];
 
 export const SKILLS: SkillGroup[] = [
@@ -204,27 +201,6 @@ export const PROJECTS: Project[] = [
       "Enables full migration of medium sized websites within a single day.",
     ],
     links: [],
-  }, 
-  {
-    id: "illustrations",
-    title: "Digital Illustration",
-    description: "A collection of my illustrations, animations, and other art.",
-    category: "art",
-    tags: [
-      "Clip Studio Paint",
-      "Character Design",
-      "Animation",
-      "Video Editing",
-    ],
-    highlights: [
-      "Drew character design, illustration, and concept sketches tailored to client specifications",
-      "Managing personal social media and freelance commissions",
-    ],
-    links: [
-      { label: "Twitter", url: "https://x.com/ilmn25/" },
-      { label: "Instagram", url: "https://www.instagram.com/ilmnnnnnnnnnn/" },
-      { label: "Youtube", url: "https://www.youtube.com/@ilmn25" },
-    ],
   },
   {
     id: "ilmnnn-website",

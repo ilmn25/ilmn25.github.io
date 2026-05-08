@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
-import IllustrationPage from "./components/IllustrationPage";
 import UnityProjectPage from "./components/UnityProjectPage";
 import TutorProjectPage from "./components/TutorProjectPage";
 import DiscordProjectPage from "./components/DiscordProjectPage";
@@ -19,15 +18,12 @@ import {
 } from "./constants";
 import {
   Github,
-  Twitter,
-  Instagram,
   Palette,
   Gamepad2,
   Database,
   Monitor,
   Terminal,
   ChevronRight,
-  Youtube,
   FileText,
   Bot,
   ExternalLink,
@@ -35,7 +31,6 @@ import {
 
 type PortfolioView =
   | "portfolio"
-  | "illustrations"
   | "unity-game"
   | "tutor-db"
   | "discord-tool"
@@ -50,9 +45,6 @@ const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [view, setView] = useState<PortfolioView>("portfolio");
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [illustrationCategory, setIllustrationCategory] = useState<
-    "colored" | "sketches"
-  >("colored");
   const scrollTimeoutRef = useRef<number | null>(null);
 
   const socialIconClass =
@@ -71,8 +63,6 @@ const App: React.FC = () => {
       const subRoute = parts[1];
 
       const projectPages: Record<string, PortfolioView> = {
-        illustrations: "illustrations",
-        "digital-art": "illustrations",
         "unity-game": "unity-game",
         "tutor-db": "tutor-db",
         "discord-tool": "discord-tool",
@@ -82,15 +72,6 @@ const App: React.FC = () => {
 
       if (projectPages[mainRoute]) {
         setView(projectPages[mainRoute]);
-
-        if (mainRoute === "illustrations" || mainRoute === "digital-art") {
-          if (subRoute === "sketches") {
-            setIllustrationCategory("sketches");
-          } else {
-            setIllustrationCategory("colored");
-          }
-        }
-
         window.scrollTo({ top: 0, behavior: "instant" });
       } else {
         // If we were in a project view, switch back to portfolio
@@ -235,9 +216,12 @@ const App: React.FC = () => {
       return;
     }
 
+    if (projectId === "illustrations") {
+      window.open("https://ilmn25.github.io/portfolio/#/illustrations/colored", "_blank");
+      return;
+    }
+
     const projectPages: Record<string, PortfolioView> = {
-      illustrations: "illustrations",
-      "digital-art": "illustrations",
       "unity-game": "unity-game",
       "tutor-db": "tutor-db",
       "discord-tool": "discord-tool",
@@ -246,10 +230,7 @@ const App: React.FC = () => {
     };
 
     const targetView = projectPages[projectId] || "portfolio";
-    const targetPath =
-      projectId === "illustrations" || projectId === "digital-art"
-        ? "/illustrations/colored"
-        : `/${projectId}`;
+    const targetPath = `/${projectId}`;
 
     executeCoolTransition(() => {
       navigate(targetPath, targetView);
@@ -264,16 +245,6 @@ const App: React.FC = () => {
     };
 
     switch (view) {
-      case "illustrations":
-        return (
-          <IllustrationPage
-            onBack={backAction}
-            activeCategory={illustrationCategory}
-            onCategoryChange={(cat) =>
-              navigate(`/illustrations/${cat}`, "illustrations")
-            }
-          />
-        );
       case "unity-game":
         return <UnityProjectPage onBack={backAction} />;
       case "tutor-db":
@@ -418,33 +389,6 @@ const App: React.FC = () => {
                       >
                         <Github className="w-6 h-6" />
                       </a>
-                      <a
-                        href={PERSONAL_INFO.social.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Twitter Profile"
-                        className={socialIconClass}
-                      >
-                        <Twitter className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={PERSONAL_INFO.social.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram Profile"
-                        className={socialIconClass}
-                      >
-                        <Instagram className="w-6 h-6" />
-                      </a>
-                      <a
-                        href={PERSONAL_INFO.social.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="YouTube Channel"
-                        className={socialIconClass}
-                      >
-                        <Youtube className="w-6 h-6" />
-                      </a>
                     </div>
                   </RevealOnScroll>
 
@@ -457,7 +401,7 @@ const App: React.FC = () => {
                       Featured Projects
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      {PROJECT_NAV.map((item) => (
+                      {PROJECT_NAV.filter(item => item.id !== "illustrations").map((item) => (
                         <button
                           key={item.id}
                           onClick={() => handleProjectClick(item.id)}
