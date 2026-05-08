@@ -144,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({
                     <div className="bg-white border border-slate-100 rounded-2xl shadow-2xl shadow-slate-200/50 py-2 overflow-hidden">
                       <div className="px-4 py-2 mb-1 flex justify-between items-center">
                         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                          Case Studies
+                          Projects
                         </p>
                         <button
                           onClick={(e) => {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ILLUSTRATIONS } from "../data/illustrations";
 import { GAME_GALLERY, GAME_FEATURES } from "../data/unityProject";
 import { TUTOR_GALLERY, TUTOR_FEATURES } from "../data/tutorProject";
 import { DISCORD_GALLERY } from "../data/discordTool";
@@ -25,8 +24,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       ...GAME_FEATURES.map((f) => f.media.thumbnailUrl),
       ...TUTOR_FEATURES.map((f) => f.image),
       ...WORKFLOW_STEPS.map((s) => s.imageUrl),
-      ...ILLUSTRATIONS.colored,
-      ...ILLUSTRATIONS.sketches,
       ...GAME_GALLERY,
       ...TUTOR_GALLERY,
       ...DISCORD_GALLERY,
