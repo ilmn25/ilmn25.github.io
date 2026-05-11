@@ -6,7 +6,7 @@ export const ASSETS_URL =
 export const PERSONAL_INFO = {
   name: "illu",
   avatar: `${ASSETS_URL}/pfp.png`,
-  title: "Full stack developer | Game developer | Art Site",
+  title: "Full stack developer | Game developer | Digital illustrator",
   education:
     "BSc (Hons) in Computer Science + Minor in Japanese @ The Hong Kong Polytechnic University Sep 2023 – Jul 2027",
   birthday: "20/05/2005",
