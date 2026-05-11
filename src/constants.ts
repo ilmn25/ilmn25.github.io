@@ -6,7 +6,7 @@ export const ASSETS_URL =
 export const PERSONAL_INFO = {
   name: "illu",
   avatar: `${ASSETS_URL}/pfp.png`,
-  title: "Full stack developer | Game developer | Digital illustrator",
+  title: "Full stack developer | Game developer | Art Site",
   education:
     "BSc (Hons) in Computer Science + Minor in Japanese @ The Hong Kong Polytechnic University Sep 2023 – Jul 2027",
   birthday: "20/05/2005",
@@ -41,7 +41,7 @@ export const PROJECT_NAV = [
     label: "SPA Specifications Generator",
     category: "Automation",
   },
-  { id: "illustrations", label: "Digital Art", category: "Art" },
+  { id: "illustrations", label: "Art Site", category: "Art" },
 ];
 
 export const SKILLS: SkillGroup[] = [
@@ -203,6 +203,19 @@ export const PROJECTS: Project[] = [
     links: [],
   },
   {
+    id: "illustrations",
+    title: "Art Site",
+    description: "My digital art portfolio site.",
+    category: "art",
+    tags: ["Digital Illustration", "Portfolio", "Creative Direction"],
+    highlights: [
+      "Hosted on custom via Cloudflare and Github Pages",
+      "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
+      "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.", 
+    ],
+    links: [{ label: "ilmnn.net", url: "https://ilmnn.net/illustrations/colored" }],
+  },
+  {
     id: "ilmnnn-website",
     title: "ILMNNNNNNNN",
     description:
@@ -253,7 +266,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     company: "Freelance",
-    role: "Digital Illustrator",
+    role: "Art Site Creator",
     period: "Aug. 2022 - present",
     type: "Part-time",
     description: [

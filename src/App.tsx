@@ -217,7 +217,7 @@ const App: React.FC = () => {
     }
 
     if (projectId === "illustrations") {
-      window.open("https://ilmn25.github.io/portfolio/#/illustrations/colored", "_blank");
+      window.open("https://ilmnn.net/illustrations/colored", "_blank");
       return;
     }
 
@@ -347,8 +347,7 @@ const App: React.FC = () => {
                       <p>{PERSONAL_INFO.birthday}</p>
                       <div className="hidden md:block">
                         <p>
-                          Full stack developer | Game developer | Digital
-                          illustrator
+                          Full stack developer | Game developer | Art Site
                         </p>
                         <p>
                           BSc (Hons) in Computer Science + Minor in Japanese
@@ -360,7 +359,7 @@ const App: React.FC = () => {
                       </div>
                       <div className="md:hidden">
                         <p>Full stack developer</p>
-                        <p>Game developer | Digital illustrator</p>
+                        <p>Game developer | Art Site</p>
                         <p>BSc (Hons) in Computer Science</p>
                         <p>+ Minor in Japanese</p>
                         <p>@ The Hong Kong Polytechnic University</p>
@@ -401,7 +400,7 @@ const App: React.FC = () => {
                       Featured Projects
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      {PROJECT_NAV.filter(item => item.id !== "illustrations").map((item) => (
+                      {PROJECT_NAV.map((item) => (
                         <button
                           key={item.id}
                           onClick={() => handleProjectClick(item.id)}
