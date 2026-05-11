@@ -51,8 +51,9 @@ const App: React.FC = () => {
     "relative p-3 bg-white hover:bg-slate-50 rounded-full transition-all duration-200 border border-slate-200 text-slate-900 hover:shadow-md active:scale-95 group";
 
   const getCleanPath = useCallback(() => {
-    const hash = window.location.hash;
-    return hash.replace(/^#\/?/, "").split("?")[0];
+    const path = window.location.pathname;
+    const cleanPath = BASE_PATH ? path.replace(BASE_PATH, "") : path;
+    return cleanPath.replace(/^\//, "").split("?")[0];
   }, []);
 
   const handleRouting = useCallback(
@@ -118,13 +119,14 @@ const App: React.FC = () => {
 
   const navigate = useCallback(
     (path: string, targetView: PortfolioView = "portfolio") => {
-      const hash = path.startsWith("/") ? path : `/${path}`;
-      const fullHash = `#${hash}`;
+      const targetPath = path.startsWith("/") ? path : `/${path}`;
+      const fullPath = BASE_PATH + targetPath;
 
-      if (window.location.hash === fullHash) {
+      if (window.location.pathname === fullPath) {
         handleRouting(true);
       } else {
-        window.location.hash = hash;
+        window.history.pushState({}, "", fullPath);
+        handleRouting(true);
       }
       // Optimization: avoid state update if view is identical
       setView((prev) => (prev !== targetView ? targetView : prev));
@@ -139,10 +141,10 @@ const App: React.FC = () => {
   }, [isLoaded, handleRouting]);
 
   useEffect(() => {
-    const onHashChange = () => handleRouting();
-    window.addEventListener("hashchange", onHashChange);
+    const onPopState = () => handleRouting();
+    window.addEventListener("popstate", onPopState);
     return () => {
-      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("popstate", onPopState);
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
   }, [handleRouting]);

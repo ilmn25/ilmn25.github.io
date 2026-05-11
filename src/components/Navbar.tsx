@@ -96,7 +96,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0">
               <a
-                href="#/"
+                href={`${basePath}/`}
                 onClick={(e) => scrollToSection(e as any, "hero")}
                 className="text-2xl font-bold text-slate-900 hover:text-black transition-colors"
               >
@@ -106,14 +106,14 @@ const Navbar: React.FC<NavbarProps> = ({
 
             <div className="flex items-center space-x-2">
               <a
-                href="#/skills"
+                href={`${basePath}/skills`}
                 onClick={(e) => scrollToSection(e as any, "skills")}
                 className="text-slate-600 hover:text-slate-900 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-xl hover:bg-slate-50 active:scale-95"
               >
                 Skills
               </a>
               <a
-                href="#/experience"
+                href={`${basePath}/experience`}
                 onClick={(e) => scrollToSection(e as any, "experience")}
                 className="text-slate-600 hover:text-slate-900 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-xl hover:bg-slate-50 active:scale-95"
               >
@@ -294,7 +294,7 @@ const Navbar: React.FC<NavbarProps> = ({
         className={`md:hidden fixed top-0 left-0 w-full h-16 flex items-center px-4 z-40 transition-all duration-300 border-b ${isScrolled ? "bg-white/80 backdrop-blur-md border-slate-200" : "bg-transparent border-transparent"}`}
       >
         <a
-          href="#/"
+          href={`${basePath}/`}
           onClick={(e) => scrollToSection(e as any, "hero")}
           className="text-2xl font-bold text-slate-900 active:scale-95 transition-transform block"
         >

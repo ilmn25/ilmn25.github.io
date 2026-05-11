@@ -242,7 +242,7 @@ export const EXPERIENCES: Experience[] = [
     links: [
       {
         label: "Showcase",
-        url: "#tutor-db",
+        url: "/tutor-db",
       },
     ],
   },
