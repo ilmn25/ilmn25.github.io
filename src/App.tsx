@@ -347,7 +347,7 @@ const App: React.FC = () => {
                       <p>{PERSONAL_INFO.birthday}</p>
                       <div className="hidden md:block">
                         <p>
-                          Full stack developer | Game developer | Art Site
+                          Full stack developer | Game developer | Digital illustrator
                         </p>
                         <p>
                           BSc (Hons) in Computer Science + Minor in Japanese
@@ -359,7 +359,7 @@ const App: React.FC = () => {
                       </div>
                       <div className="md:hidden">
                         <p>Full stack developer</p>
-                        <p>Game developer | Art Site</p>
+                        <p>Game developer | Digital illustrator</p>
                         <p>BSc (Hons) in Computer Science</p>
                         <p>+ Minor in Japanese</p>
                         <p>@ The Hong Kong Polytechnic University</p>
