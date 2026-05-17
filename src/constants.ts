@@ -9,7 +9,7 @@ export const PERSONAL_INFO = {
   title: "Full stack developer | Game developer | Digital illustrator",
   education:
     "BSc (Hons) in Computer Science + Minor in Japanese @ The Hong Kong Polytechnic University Sep 2023 – Jul 2027",
-  birthday: "20/05/2005",
+  birthday: "20/05/2005 EN 中",
   decoration: "+-= ═.·:·.☽ ✧  ✦  ✧ ☾.·:·.═ =-+",
   contact: {
     whatsapp: "+852 6236 5318",
@@ -41,7 +41,7 @@ export const PROJECT_NAV = [
     label: "SPA Specifications Generator",
     category: "Automation",
   },
-  { id: "illustrations", label: "Art Site", category: "Art" },
+  { id: "illustrations", label: "Art Portfolio", category: "ilmnn.net" },
 ];
 
 export const SKILLS: SkillGroup[] = [
@@ -204,7 +204,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "illustrations",
-    title: "Art Site",
+    title: "Art Portfolio",
     description: "My digital art portfolio site.",
     category: "art",
     tags: ["Digital Illustration", "Portfolio", "Creative Direction"],
@@ -266,7 +266,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     company: "Freelance",
-    role: "Art Site Creator",
+    role: "Digital Illustrator",
     period: "Aug. 2022 - present",
     type: "Part-time",
     description: [
