@@ -73,13 +73,10 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
                   <h1 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">
                     Discord Automation Tool
                   </h1>
-                  <span className="px-2.5 py-0.5 bg-slate-900 text-white text-[9px] font-medium rounded-full uppercase tracking-widest">
-                    Cloud Tools
-                  </span>
                 </div>
 
                 <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed mb-6">
-                  A cloud-native web app for streamlining job posts across many
+                  A three-tier cloud-native web app for streamlining job posts across many
                   channels on Discord.
                 </p>
 

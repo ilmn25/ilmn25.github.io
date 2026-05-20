@@ -6,9 +6,17 @@ export const ASSETS_URL =
 export const PERSONAL_INFO = {
   name: "illu",
   avatar: `${ASSETS_URL}/pfp.png`,
-  title: "Full stack developer | Game developer | Digital illustrator",
+  title:
+    "CS student specializing in cloud-hosted services, enterprise systems, and AI-powered tools.",
+  description1: "CS student specializing in",
+  description2: "cloud-hosted services, enterprise",
+  description3: "systems, and AI-powered tools.",
   education:
     "BSc (Hons) in Computer Science + Minor in Japanese @ The Hong Kong Polytechnic University Sep 2023 – Jul 2027",
+  degree: "BSc (Hons) in Computer Science + Minor in Japanese",
+  degreeMobile: "BSc (Hons) in Computer Science",
+  uni: "@ The Hong Kong Polytechnic University",
+  uniPeriod: "Sep 2023 – Jul 2027",
   birthday: "20/05/2005 EN 中",
   decoration: "+-= ═.·:·.☽ ✧  ✦  ✧ ☾.·:·.═ =-+",
   contact: {
@@ -45,15 +53,6 @@ export const PROJECT_NAV = [
 ];
 
 export const SKILLS: SkillGroup[] = [
-  {
-    category: "Languages",
-    skills: [
-      "Native English",
-      "Native Cantonese",
-      "Native Mandarin",
-      "Basic Japanese",
-    ],
-  },
   {
     category: "Programming Languages",
     skills: [
@@ -104,6 +103,7 @@ export const SKILLS: SkillGroup[] = [
       "GitHub Actions",
       "Supabase",
       "Vercel",
+      "Cloudflare",
       "AWS (IAM, ECS, ECR, S3)",
     ],
   },
@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
     id: "discord-tool",
     title: "Discord Message Tool",
     description:
-      "An automated marketing system for Discord that streamlines cross-server posting and deployments.",
+      "A three-tier automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
     tags: [
       "FastAPI",
@@ -176,7 +176,7 @@ export const PROJECTS: Project[] = [
     id: "tutor-db",
     title: "Tutor Centre Management System",
     description:
-      "A custom ERP and CRM solution built to streamline Attendance, client communication, and operations management for education centers..",
+      "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
     tags: ["Supabase", "PostgreSQL", "React", "Tailwind", "Stripe"],
     highlights: [
@@ -207,7 +207,7 @@ export const PROJECTS: Project[] = [
     title: "Art Portfolio",
     description: "My digital art portfolio site.",
     category: "art",
-    tags: ["Digital Illustration", "Portfolio", "Creative Direction"],
+    tags: ["cloudflare", "dns", "design"],
     highlights: [
       "Hosted on custom via Cloudflare and Github Pages",
       "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
@@ -219,9 +219,9 @@ export const PROJECTS: Project[] = [
     id: "ilmnnn-website",
     title: "ILMNNNNNNNN",
     description:
-      "This is a conceptual mockup for a clothing and accessories brand, all products displayed do not exist.",
+      "This is a work-in-progress conceptual mockup for a clothing and accessories brand.",
     category: "web",
-    tags: ["Pet Project"],
+    tags: [],
     highlights: [],
     links: [],
   },

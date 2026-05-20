@@ -62,9 +62,6 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
               <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                 SPA HTML Tree Specification Generator
               </h1>
-              <span className="px-2.5 py-0.5 bg-slate-900 text-white text-[9px] font-medium rounded-full uppercase tracking-widest">
-                Workflow
-              </span>
             </div>
             <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed">
               A prompt driven workflow to speed up the migration of legacy SPAs

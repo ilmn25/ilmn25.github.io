@@ -72,9 +72,6 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
                 <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                   3D Unity Game
                 </h1>
-                <span className="px-2.5 py-0.5 bg-slate-900 text-white text-[9px] font-bold rounded-full uppercase tracking-widest">
-                  Game Dev
-                </span>
               </div>
               <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed">
                 A technical showcase focusing on procedural systems, pathfinding
