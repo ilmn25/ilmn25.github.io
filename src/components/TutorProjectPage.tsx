@@ -61,12 +61,9 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
                 <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                   Tutor Centre Management System
                 </h1>
-                <span className="px-2.5 py-0.5 bg-slate-900 text-white text-[9px] font-bold rounded-full uppercase tracking-widest">
-                  Web App
-                </span>
               </div>
               <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed mb-6">
-                A custom ERP and CRM solution built to streamline Attendance,
+                A three-tier custom ERP and CRM web application built to streamline Attendance,
                 Client Communication, and Operations Management for education
                 centers.
               </p>

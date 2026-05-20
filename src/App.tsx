@@ -79,7 +79,7 @@ const App: React.FC = () => {
         const wasInProject = view !== "portfolio";
         setView("portfolio");
 
-        const sections = ["hero", "skills", "experience", "projects"];
+        const sections = ["hero", "about", "skills", "experience", "projects"];
         const targetId = sections.includes(mainRoute)
           ? mainRoute
           : mainRoute === "" || !mainRoute
@@ -139,6 +139,13 @@ const App: React.FC = () => {
       handleRouting();
     }
   }, [isLoaded, handleRouting]);
+
+  useEffect(() => {
+    (window as any).__isTransitioning = isTransitioning;
+    window.dispatchEvent(
+      new CustomEvent("websitetransition", { detail: isTransitioning })
+    );
+  }, [isTransitioning]);
 
   useEffect(() => {
     const onPopState = () => handleRouting();
@@ -339,38 +346,42 @@ const App: React.FC = () => {
                   </RevealOnScroll>
 
                   <RevealOnScroll direction="up" delay={300}>
+                    <div className="max-w-xl text-slate-600 text-base space-y-1 leading-relaxed font-mono mb-4">
+                      <p>{PERSONAL_INFO.birthday}</p>
+                      <div className="hidden md:block">
+                        <p>{(PERSONAL_INFO as any).degree}</p>
+                        <p>{(PERSONAL_INFO as any).uni} {(PERSONAL_INFO as any).uniPeriod}</p>
+                      </div>
+                      <div className="md:hidden">
+                        <p>{(PERSONAL_INFO as any).degreeMobile}</p>
+                        <p>{(PERSONAL_INFO as any).uni}</p>
+                        <p>{(PERSONAL_INFO as any).uniPeriod}</p>
+                      </div>
+                    </div>
+                  </RevealOnScroll>
+
+                  <RevealOnScroll direction="up" delay={400}>
                     <div className="text-slate-400 font-mono mb-4 text-xs md:text-sm tracking-widest overflow-hidden whitespace-nowrap">
                       {PERSONAL_INFO.decoration}
                     </div>
                   </RevealOnScroll>
 
-                  <RevealOnScroll direction="up" delay={400}>
+                  <RevealOnScroll direction="up" delay={500}>
                     <div className="max-w-xl text-slate-600 text-base mb-8 space-y-1 leading-relaxed font-mono">
-                      <p>{PERSONAL_INFO.birthday}</p>
                       <div className="hidden md:block">
                         <p>
-                          Full stack developer | Game developer | Digital illustrator
-                        </p>
-                        <p>
-                          BSc (Hons) in Computer Science + Minor in Japanese
-                        </p>
-                        <p>
-                          @ The Hong Kong Polytechnic University Sep 2023 – Jul
-                          2027
+                          {(PERSONAL_INFO as any).description1} {(PERSONAL_INFO as any).description2} {(PERSONAL_INFO as any).description3}
                         </p>
                       </div>
                       <div className="md:hidden">
-                        <p>Full stack developer</p>
-                        <p>Game developer | Digital illustrator</p>
-                        <p>BSc (Hons) in Computer Science</p>
-                        <p>+ Minor in Japanese</p>
-                        <p>@ The Hong Kong Polytechnic University</p>
-                        <p>Sep 2023 – Jul 2027</p>
+                        <p>{(PERSONAL_INFO as any).description1}</p>
+                        <p>{(PERSONAL_INFO as any).description2}</p>
+                        <p>{(PERSONAL_INFO as any).description3}</p>
                       </div>
                     </div>
                   </RevealOnScroll>
 
-                  <RevealOnScroll direction="up" delay={500}>
+                  <RevealOnScroll direction="up" delay={600}>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10">
                       <a
                         href={(PERSONAL_INFO.social as any).resume}
@@ -395,7 +406,7 @@ const App: React.FC = () => {
 
                   <RevealOnScroll
                     direction="up"
-                    delay={600}
+                    delay={700}
                     className="hidden md:flex flex-col items-start gap-3 w-full"
                   >
                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1 ml-1">
@@ -422,8 +433,29 @@ const App: React.FC = () => {
             </header>
 
             <section
+              id="about"
+              className="py-16 bg-slate-50 border-b border-slate-100 scroll-mt-20 overflow-hidden"
+            >
+              <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-16">
+                <RevealOnScroll direction="up" delay={200}>
+                  <div className="text-slate-600 text-sm md:text-base leading-relaxed font-mono space-y-4 text-center md:text-left">
+                    <p>
+                      I'm illu, a Computer Science student at PolyU.
+                    </p>
+                    <p>
+                      When I was 13, I started self-studying programming. I made dozens of <a href="https://www.youtube.com/watch?v=bydbNS_EmZk" target="_blank" rel="noopener noreferrer" className="underline decoration-slate-300 hover:decoration-slate-500 transition-colors">small games and programs</a> throughout my childhood, which has allowed me to develop a strong background in computers, coding, and digital art.
+                    </p>
+                    <p>
+                      My interest in software development comes from my passion for improvement. programming allows me to create systems that solve problems for myself and others, such as automating things that are slow and inefficient, so I have more time doing things I like! I aim to one day work at a senior position where I can apply my skills in cloud-hosted services, enterprise systems, and AI-powered tools.
+                    </p>
+                  </div>
+                </RevealOnScroll>
+              </div>
+            </section>
+
+            <section
               id="skills"
-              className="py-12 bg-slate-50 scroll-mt-20 overflow-hidden"
+              className="py-12 bg-white border-b border-slate-100 scroll-mt-20 overflow-hidden"
             >
               <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
                 <RevealOnScroll
@@ -434,22 +466,22 @@ const App: React.FC = () => {
                     Skills
                   </h2>
                 </RevealOnScroll>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                   {SKILLS.map((group, i) => (
                     <RevealOnScroll
                       key={i}
                       direction={i % 2 === 0 ? "left" : "right"}
                       delay={i * 100}
                     >
-                      <div className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/5 h-full">
-                        <h3 className="text-slate-900 font-bold text-sm mb-4 uppercase tracking-wider border-b border-slate-50 pb-1.5">
+                      <div className="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/5 h-full">
+                        <h3 className="text-slate-900 font-bold text-sm mb-4 uppercase tracking-wider border-b border-slate-200/40 pb-1.5">
                           {group.category}
                         </h3>
                         <div className="flex flex-wrap gap-1.5">
                           {group.skills.map((skill, j) => (
                             <span
                               key={j}
-                              className="px-2.5 py-1 bg-slate-50 rounded text-xs text-slate-600 border border-slate-100 font-medium"
+                              className="px-2.5 py-1 bg-white rounded text-xs text-slate-600 border border-slate-200/50 font-medium"
                             >
                               {skill}
                             </span>
@@ -464,7 +496,7 @@ const App: React.FC = () => {
 
             <section
               id="experience"
-              className="py-12 bg-white scroll-mt-20 overflow-hidden"
+              className="py-12 bg-slate-50 border-b border-slate-100 scroll-mt-20 overflow-hidden"
             >
               <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-16">
                 <RevealOnScroll
@@ -548,7 +580,7 @@ const App: React.FC = () => {
 
             <section
               id="projects"
-              className="py-12 px-8 md:px-12 lg:px-16 scroll-mt-20 bg-slate-50/50 overflow-hidden"
+              className="py-12 px-8 md:px-12 lg:px-16 scroll-mt-20 bg-white overflow-hidden"
             >
               <div className="max-w-6xl mx-auto">
                 <RevealOnScroll

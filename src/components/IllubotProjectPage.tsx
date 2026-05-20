@@ -69,14 +69,6 @@ const IllubotProjectPage: React.FC<IllubotProjectPageProps> = ({ onBack }) => {
                 <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                   illubot
                 </h1>
-                <div className="flex gap-2">
-                  <span className="px-2.5 py-0.5 bg-slate-900 text-white text-[9px] font-bold rounded-full uppercase tracking-widest">
-                    AI Agent
-                  </span>
-                  <span className="px-2.5 py-0.5 bg-slate-900 text-white text-[9px] font-bold rounded-full uppercase tracking-widest">
-                    MCP
-                  </span>
-                </div>
               </div>
               <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed mb-6">
                 A high-performance MCP AI agent Discord bot engineered for

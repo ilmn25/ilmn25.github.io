@@ -14,12 +14,39 @@ const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
   className = "",
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [, setIsTransitioning] = useState(() => !!(window as any).__isTransitioning);
   const ref = useRef<HTMLDivElement>(null);
+  const isIntersectingRef = useRef(false);
+
+  useEffect(() => {
+    const handleTransition = (e: Event) => {
+      const customEvent = e as CustomEvent<boolean>;
+      const transitioning = customEvent.detail;
+      setIsTransitioning(transitioning);
+
+      if (!transitioning && isIntersectingRef.current) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("websitetransition", handleTransition as EventListener);
+    return () => {
+      window.removeEventListener("websitetransition", handleTransition as EventListener);
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        isIntersectingRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          const transitioning = !!(window as any).__isTransitioning;
+          if (!transitioning) {
+            setIsVisible(true);
+          }
+        } else {
+          setIsVisible(false);
+        }
       },
       {
         threshold: 0.1,

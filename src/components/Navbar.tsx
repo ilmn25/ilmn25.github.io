@@ -106,6 +106,13 @@ const Navbar: React.FC<NavbarProps> = ({
 
             <div className="flex items-center space-x-2">
               <a
+                href={`${basePath}/about`}
+                onClick={(e) => scrollToSection(e as any, "about")}
+                className="text-slate-600 hover:text-slate-900 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-xl hover:bg-slate-50 active:scale-95"
+              >
+                About
+              </a>
+              <a
                 href={`${basePath}/skills`}
                 onClick={(e) => scrollToSection(e as any, "skills")}
                 className="text-slate-600 hover:text-slate-900 px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-xl hover:bg-slate-50 active:scale-95"
