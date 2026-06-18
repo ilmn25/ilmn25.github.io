@@ -17,11 +17,12 @@ export interface Experience {
   role: string;
   period: string;
   description: string[];
-  type?: "Full-time" | "Part-time" | "Freelance";
+  type?: "Full-time" | "Part-time" | "Freelance" | "Contract" | "Internship";
   links?: {
     label: string;
     url: string;
   }[];
+  active?: boolean;
 }
 
 export interface SkillGroup {
