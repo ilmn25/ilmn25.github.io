@@ -229,15 +229,31 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: "Time Super Centre",
-    role: "Full Stack Engineer & IT Support",
-    period: "Jan. 2026 – Present",
+    company: "HK Hospital Authority",
+    role: "Programmer (Infrastructure Services) - Sandwich Intern",
+    period: "Jul. 2026 – Jun. 2027",
+    type: "Full-time",
+    description: [],
+  },
+  {
+    company: "The Hong Kong Polytechnic University",
+    role: "FCMS Competition Student Assistant",
+    period: "Jun. 2026 – Jul. 2026",
     type: "Part-time",
     description: [
-      "Developing an internal ERP/CRM administrative system with React, PostgreSQL, and Supabase, replacing manual spreadsheet workflows and saving staff 30+ hours per month.",
-      "Reliably integrated features in a live environment with 1200+ booking data entries, including attendance tracking, RBAC, payment reconciliation, and rollback systems.",
+      "Assist in operations of the Final Round of PolyU Young Minds in Computer and Mathematical Sciences Competition",
+    ],
+    active: true,
+  },
+  {
+    company: "Time Super Centre",
+    role: "Full Stack Developer & IT Support",
+    period: "Jan. 2026 – Jun. 2026",
+    type: "Part-time",
+    description: [
+      "Developing an internal ERP/CRM administrative system, working with staff and owners to understand business pain points, saving staff 30+ hours per month.",
+      "Reliably integrated features in a live environment with 1200+ booking data entries, including RBAC, payment reconciliation, and rollback systems.",
       "Researched, procured, and integrated biometric scanning hardware to enable self check-in for younger students, fully automating attendance and eliminating manual entry errors.",
-      "Collaborating with staff and owners to understand the pain points of their workflow, and deliver iterative releases that increasingly cuts down turnaround time.",
     ],
     links: [
       {
@@ -247,15 +263,15 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    company: "AWIL Ltd",
+    company: "AWIL Group Limited",
     role: "Software Engineer - Winter Intern",
     period: "Dec. 2025 - Jan. 2026",
     type: "Full-time",
     description: [
-      "Completed assigned modules 4 days ahead of schedule, including application wide settings, localization systems, and content data pipelines.",
-      "Spotted and resolved issues in the asset development pipeline, helping design interns unfamiliar with best practices avoid ~3 days of wasted work.",
-      "Reshaped long-term project direction through providing insight on the budget and scalability of different visual styles to the director during group meetings.",
-      "Audited outdated specifications and wrote onboarding documentation for future interns, greatly reducing handover friction and shortening ramp-up time from 2 weeks to 3-4 days.",
+      "C#, Github, Excel, Unity",
+      "Developed application-wide settings, localization systems, and content pipelines, delivering 4 days ahead of schedule.",
+      "Resolved asset pipeline issues and guided interns unfamiliar with best practices, preventing ~3 days of wasted work while influencing project direction with budget/scalability insights.",
+      "Audited outdated specs and authored onboarding documentation, reducing intern ramp-up time from 2 weeks to 3–4 days.",
     ],
     links: [
       {

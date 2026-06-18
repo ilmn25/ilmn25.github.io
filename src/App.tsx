@@ -515,7 +515,11 @@ const App: React.FC = () => {
                       delay={i * 150}
                       className="relative pl-10"
                     >
-                      <div className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-slate-900 border-4 border-white"></div>
+                      <div className={`absolute left-[-9px] top-1 w-4 h-4 rounded-full border-4 border-white ${
+                        exp.active || exp.period.includes("Present")
+                          ? "bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)] animate-pulse"
+                          : "bg-slate-900"
+                      }`}></div>
                       <div className="relative bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/5 flex flex-col h-full">
                         <div className="flex justify-between items-start gap-4 mb-1.5">
                           <span className="text-slate-400 font-mono text-xs">
