@@ -228,13 +228,13 @@ export const PROJECTS: Project[] = [
 ];
 
 export const EXPERIENCES: Experience[] = [
-  {
-    company: "HK Hospital Authority",
-    role: "Programmer (Infrastructure Services) - Sandwich Intern",
-    period: "Jul. 2026 – Jun. 2027",
-    type: "Full-time",
-    description: [],
-  },
+  // {
+  //   company: "HK Hospital Authority",
+  //   role: "Programmer (Infrastructure Services) - Sandwich Intern",
+  //   period: "Jul. 2026 – Jun. 2027",
+  //   type: "Full-time",
+  //   description: [],
+  // },
   {
     company: "The Hong Kong Polytechnic University",
     role: "FCMS Competition Student Assistant",
