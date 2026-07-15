@@ -58,6 +58,10 @@ export const DISCORD_STRUCTURED_STACK = [
 ];
 
 export const DISCORD_GALLERY = [
+  `${DISCORD_BASE}/9.png`,
+  `${DISCORD_BASE}/8.png`,
+  `${DISCORD_BASE}/7.png`,
+  `${DISCORD_BASE}/10.png`,
   `${DISCORD_BASE}/6.png`,
   `${DISCORD_BASE}/5.png`,
   `${DISCORD_BASE}/4.png`,
