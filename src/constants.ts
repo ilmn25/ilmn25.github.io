@@ -33,20 +33,20 @@ export const PERSONAL_INFO = {
 
 export const PROJECT_NAV = [
   { id: "illubot", label: "illubot", category: "MCP Agent" },
-  { id: "unity-game", label: "3D Unity Game", category: "Game Dev" },
+  { id: "decay", label: "Decay", category: "Game Dev" },
   {
-    id: "tutor-db",
-    label: "Tutor Centre Management System",
+    id: "counter",
+    label: "Counter",
     category: "Web App",
   },
   {
-    id: "discord-tool",
-    label: "Discord Message Tool",
+    id: "disbatch",
+    label: "Disbatch",
     category: "Cloud Tools",
   },
   {
-    id: "spa-tree",
-    label: "SPA Specifications Generator",
+    id: "specgen",
+    label: "Specify",
     category: "Automation",
   },
   { id: "illustrations", label: "Art Portfolio", category: "ilmnn.net" },
@@ -137,8 +137,8 @@ export const PROJECTS: Project[] = [
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/260228" }],
   },
   {
-    id: "discord-tool",
-    title: "Discord Message Tool",
+    id: "disbatch",
+    title: "Disbatch",
     description:
       "A three-tier automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
@@ -158,8 +158,8 @@ export const PROJECTS: Project[] = [
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/251128" }],
   },
   {
-    id: "unity-game",
-    title: "2.5D Survival Game Project",
+    id: "decay",
+    title: "Decay",
     description:
       "A survival game featuring infinite procedural generation and optimized map partitioning.",
     category: "game",
@@ -173,8 +173,8 @@ export const PROJECTS: Project[] = [
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/240809" }],
   },
   {
-    id: "tutor-db",
-    title: "Tutor Centre Management System",
+    id: "counter",
+    title: "Counter",
     description:
       "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
@@ -188,8 +188,8 @@ export const PROJECTS: Project[] = [
     links: [],
   },
   {
-    id: "spa-tree",
-    title: "SPA HTML Tree Specification Generator",
+    id: "specgen",
+    title: "Specify",
     description:
       "A prompt driven workflow to speed up the migration of legacy SPAs to AI-first IDEs such as Google AI Studio.",
     category: "workflow",
@@ -258,7 +258,7 @@ export const EXPERIENCES: Experience[] = [
     links: [
       {
         label: "Showcase",
-        url: "/tutor-db",
+        url: "/counter",
       },
     ],
   },

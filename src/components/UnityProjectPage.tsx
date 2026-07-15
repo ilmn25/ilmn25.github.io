@@ -70,7 +70,7 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
             <header className="mb-10">
               <div className="flex items-center gap-4 mb-2">
                 <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                  3D Unity Game
+                  Decay
                 </h1>
               </div>
               <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed">

@@ -31,10 +31,10 @@ import {
 
 type PortfolioView =
   | "portfolio"
-  | "unity-game"
-  | "tutor-db"
-  | "discord-tool"
-  | "spa-tree"
+  | "decay"
+  | "counter"
+  | "disbatch"
+  | "specgen"
   | "illubot";
 
 const BASE_PATH = window.location.pathname.startsWith("/ilmn25")
@@ -64,10 +64,10 @@ const App: React.FC = () => {
       const subRoute = parts[1];
 
       const projectPages: Record<string, PortfolioView> = {
-        "unity-game": "unity-game",
-        "tutor-db": "tutor-db",
-        "discord-tool": "discord-tool",
-        "spa-tree": "spa-tree",
+        "decay": "decay",
+        "counter": "counter",
+        "disbatch": "disbatch",
+        "specgen": "specgen",
         illubot: "illubot",
       };
 
@@ -231,10 +231,10 @@ const App: React.FC = () => {
     }
 
     const projectPages: Record<string, PortfolioView> = {
-      "unity-game": "unity-game",
-      "tutor-db": "tutor-db",
-      "discord-tool": "discord-tool",
-      "spa-tree": "spa-tree",
+      "decay": "decay",
+      "counter": "counter",
+      "disbatch": "disbatch",
+      "specgen": "specgen",
       illubot: "illubot",
     };
 
@@ -254,13 +254,13 @@ const App: React.FC = () => {
     };
 
     switch (view) {
-      case "unity-game":
+      case "decay":
         return <UnityProjectPage onBack={backAction} />;
-      case "tutor-db":
+      case "counter":
         return <TutorProjectPage onBack={backAction} />;
-      case "discord-tool":
+      case "disbatch":
         return <DiscordProjectPage onBack={backAction} />;
-      case "spa-tree":
+      case "specgen":
         return <SpaTreeProjectPage onBack={backAction} />;
       case "illubot":
         return <IllubotProjectPage onBack={backAction} />;
@@ -274,13 +274,13 @@ const App: React.FC = () => {
     switch (id) {
       case "illubot":
         return <Bot {...iconProps} />;
-      case "unity-game":
+      case "decay":
         return <Gamepad2 {...iconProps} />;
-      case "tutor-db":
+      case "counter":
         return <Database {...iconProps} />;
-      case "discord-tool":
+      case "disbatch":
         return <Monitor {...iconProps} />;
-      case "spa-tree":
+      case "specgen":
         return <Terminal {...iconProps} />;
       case "illustrations":
         return <Palette {...iconProps} />;

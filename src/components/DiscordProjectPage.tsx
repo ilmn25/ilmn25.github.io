@@ -71,13 +71,12 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
               <div>
                 <div className="flex items-center gap-4 mb-2">
                   <h1 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">
-                    Discord Automation Tool
+                    Disbatch
                   </h1>
                 </div>
 
                 <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed mb-6">
-                  A three-tier cloud-native web app for streamlining job posts across many
-                  channels on Discord.
+                  A three-tier cloud-native web app designed for content creators to do organic marketing on Discord.
                 </p>
 
                 <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
