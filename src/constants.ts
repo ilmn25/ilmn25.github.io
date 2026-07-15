@@ -155,7 +155,10 @@ export const PROJECTS: Project[] = [
       "Developed a system that automates organic marketing by posting across multiple Discord servers, reducing effort from 2–3 hours to just minutes after setup.",
       "Implemented containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
     ],
-    links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/251128" }],
+    links: [
+      { label: "Landing Page", url: "https://portfolio.ilmnn.net/Disbatch/" },
+      { label: "GitHub Repo", url: "https://github.com/ilmn25/251128" },
+    ],
   },
   {
     id: "decay",

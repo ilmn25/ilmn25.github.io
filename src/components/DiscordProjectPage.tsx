@@ -10,6 +10,7 @@ import {
   Database,
   Languages,
   Layout,
+  ExternalLink,
 } from "lucide-react";
 import {
   DISCORD_HIGHLIGHTS,
@@ -126,10 +127,19 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
 
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="https://github.com/ilmn25/251128"
+                    href="https://portfolio.ilmnn.net/Disbatch/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-black transition-all hover:scale-105 shadow-xl shadow-slate-200 flex items-center gap-2"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View Landing Page
+                  </a>
+                  <a
+                    href="https://github.com/ilmn25/251128"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3.5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold hover:bg-slate-50 transition-all hover:scale-105 shadow-lg shadow-slate-100 flex items-center gap-2"
                   >
                     <Github className="w-4 h-4" />
                     View Repository
