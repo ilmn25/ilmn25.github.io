@@ -17,12 +17,21 @@ export interface Experience {
   role: string;
   period: string;
   description: string[];
-  type?: "Full-time" | "Part-time" | "Freelance" | "Contract" | "Internship";
+  tags?: string[];
+  type?:
+    | "Full-time"
+    | "Part-time"
+    | "Freelance"
+    | "Contract"
+    | "Internship"
+    | "Service Learning";
   links?: {
     label: string;
     url: string;
   }[];
   active?: boolean;
+  /** Shown when the experience list is collapsed to highlights only. */
+  featured?: boolean;
 }
 
 export interface SkillGroup {

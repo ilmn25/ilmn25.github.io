@@ -33,20 +33,20 @@ export const PERSONAL_INFO = {
 
 export const PROJECT_NAV = [
   { id: "illubot", label: "illubot", category: "MCP Agent" },
-  { id: "unity-game", label: "3D Unity Game", category: "Game Dev" },
+  { id: "morimori", label: "morimori", category: "Game Dev" },
   {
-    id: "tutor-db",
-    label: "Tutor Centre Management System",
+    id: "counter",
+    label: "Counter",
     category: "Web App",
   },
   {
-    id: "discord-tool",
-    label: "Discord Message Tool",
+    id: "disbatch",
+    label: "Disbatch",
     category: "Cloud Tools",
   },
   {
-    id: "spa-tree",
-    label: "SPA Specifications Generator",
+    id: "specify",
+    label: "Specify",
     category: "Automation",
   },
   { id: "illustrations", label: "Art Portfolio", category: "ilmnn.net" },
@@ -137,8 +137,8 @@ export const PROJECTS: Project[] = [
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/260228" }],
   },
   {
-    id: "discord-tool",
-    title: "Discord Message Tool",
+    id: "disbatch",
+    title: "Disbatch",
     description:
       "A three-tier automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
@@ -155,11 +155,14 @@ export const PROJECTS: Project[] = [
       "Developed a system that automates organic marketing by posting across multiple Discord servers, reducing effort from 2–3 hours to just minutes after setup.",
       "Implemented containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
     ],
-    links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/251128" }],
+    links: [
+      { label: "Landing Page", url: "https://portfolio.ilmnn.net/Disbatch/" },
+      { label: "GitHub Repo", url: "https://github.com/ilmn25/251128" },
+    ],
   },
   {
-    id: "unity-game",
-    title: "2.5D Survival Game Project",
+    id: "morimori",
+    title: "morimori",
     description:
       "A survival game featuring infinite procedural generation and optimized map partitioning.",
     category: "game",
@@ -173,8 +176,8 @@ export const PROJECTS: Project[] = [
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/240809" }],
   },
   {
-    id: "tutor-db",
-    title: "Tutor Centre Management System",
+    id: "counter",
+    title: "Counter",
     description:
       "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
@@ -188,8 +191,8 @@ export const PROJECTS: Project[] = [
     links: [],
   },
   {
-    id: "spa-tree",
-    title: "SPA HTML Tree Specification Generator",
+    id: "specify",
+    title: "Specify",
     description:
       "A prompt driven workflow to speed up the migration of legacy SPAs to AI-first IDEs such as Google AI Studio.",
     category: "workflow",
@@ -215,51 +218,117 @@ export const PROJECTS: Project[] = [
     ],
     links: [{ label: "ilmnn.net", url: "https://ilmnn.net/illustrations/colored" }],
   },
-  {
-    id: "ilmnnn-website",
-    title: "ILMNNNNNNNN",
-    description:
-      "This is a work-in-progress conceptual mockup for a clothing and accessories brand.",
-    category: "web",
-    tags: [],
-    highlights: [],
-    links: [],
-  },
+  // {
+  //   id: "ilmnnn-website",
+  //   title: "ILMNNNNNNNN",
+  //   description:
+  //     "This is a work-in-progress conceptual mockup for a clothing and accessories brand.",
+  //   category: "web",
+  //   tags: [],
+  //   highlights: [],
+  //   links: [],
+  // },
 ];
 
-export const EXPERIENCES: Experience[] = [
-  // {
-  //   company: "HK Hospital Authority",
-  //   role: "Programmer (Infrastructure Services) - Sandwich Intern",
-  //   period: "Jul. 2026 – Jun. 2027",
-  //   type: "Full-time",
-  //   description: [],
-  // },
+export const EXPERIENCES: Experience[] = [ 
   {
-    company: "The Hong Kong Polytechnic University",
-    role: "FCMS Competition Student Assistant",
-    period: "Jun. 2026 – Jul. 2026",
-    type: "Part-time",
+    company: "HK Hospital Authority",
+    role: "Intern - Technical Infrastructure Services",
+    period: "Jul. 2026 – Jun. 2027",
+    type: "Full-time",
+    featured: true,
+    tags: [
+      "Python",
+      "Bash",
+      "VBS",
+      "Linux",
+      "UNIX",
+      "TCP/IP",
+      "SSH",
+      "MySQL",
+      "Excel",
+    ],
     description: [
-      "Assist in operations of the Final Round of PolyU Young Minds in Computer and Mathematical Sciences Competition",
+      "Engineered automated pipelines to handle daily inventory updates, SSH key provisioning, Networker backup scheduling, and deadline reminders, significantly reducing operational overhead.",
+      "Automated the validation of network configuration, storage allocations, and account privilege across new servers, saving hours of review and auditing and preventing human checking error.",
     ],
     active: true,
+  },
+  {
+    company: "FCMS, The Hong Kong Polytechnic University",
+    role: "AI Project Assistant",
+    period: "Oct. 2026 – Jun. 2027",
+    type: "Part-time",
+    featured: true,
+    tags: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Docker",
+      "DeepSeek",
+      "AI Orchestration",
+      "Video Generation",
+    ],
+    description: [
+      "Collaborating on a faculty research project to engineer an autonomous pipeline that generates personalized AI educational content for diverse user profiles.",
+      "Formulating multi-shot prompt architectures and script generation workflows to dynamically adjust lesson pacing, tone, and complexity based on target demographics.",
+    ],
+    active: true,
+  }, 
+  {
+    company: "FCMS, The Hong Kong Polytechnic University",
+    role: "PolyU Info Day Student Assistant",
+    period: "Oct. 2026",
+    type: "Part-time",
+    description: [
+      "Answered questions and provided guidance to prospective students and their families during the PolyU Info Day event.",
+    ],
+  },
+  {
+    company: "St. Joan of Arc Secondary School",
+    role: "STEM Instructor",
+    period: "Jul. 2026",
+    type: "Service Learning",
+    featured: true,
+    tags: ["C++", "Arduino", "React", "Google AI Studio"],
+    description: [
+      "Prepared material and taught students embedded programming with C++ for Arduino-powered DIY 3D printers and AI-assisted web development using Google AI Studio.",
+    ],
   },
   {
     company: "Time Super Centre",
     role: "Full Stack Developer & IT Support",
     period: "Jan. 2026 – Jun. 2026",
     type: "Part-time",
+    featured: true,
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript/TypeScript",
+      "RESTful API",
+      "React",
+      "PostgreSQL",
+      "Supabase",
+    ],
     description: [
-      "Developing an internal ERP/CRM administrative system, working with staff and owners to understand business pain points, saving staff 30+ hours per month.",
+      "Developed an internal ERP/CRM administrative system, working with staff and owners to understand business pain points, saving staff 30+ hours per month.",
       "Reliably integrated features in a live environment with 1200+ booking data entries, including RBAC, payment reconciliation, and rollback systems.",
       "Researched, procured, and integrated biometric scanning hardware to enable self check-in for younger students, fully automating attendance and eliminating manual entry errors.",
     ],
     links: [
       {
         label: "Showcase",
-        url: "/tutor-db",
+        url: "/counter",
       },
+    ],
+  },
+  {
+    company: "FCMS, The Hong Kong Polytechnic University",
+    role: "CMS Competition Student Assistant",
+    period: "Jun. 2026",
+    type: "Part-time",
+    description: [
+      "Assisted in the operations of the PolyU Young Minds in Computer and Mathematical Sciences Competition",
     ],
   },
   {
@@ -267,8 +336,9 @@ export const EXPERIENCES: Experience[] = [
     role: "Software Engineer - Winter Intern",
     period: "Dec. 2025 - Jan. 2026",
     type: "Full-time",
+    featured: true,
+    tags: ["C#", "GitHub", "Excel", "Unity"],
     description: [
-      "C#, Github, Excel, Unity",
       "Developed application-wide settings, localization systems, and content pipelines, delivering 4 days ahead of schedule.",
       "Resolved asset pipeline issues and guided interns unfamiliar with best practices, preventing ~3 days of wasted work while influencing project direction with budget/scalability insights.",
       "Audited outdated specs and authored onboarding documentation, reducing intern ramp-up time from 2 weeks to 3–4 days.",
@@ -284,7 +354,7 @@ export const EXPERIENCES: Experience[] = [
     company: "Freelance",
     role: "Digital Illustrator",
     period: "Aug. 2022 - present",
-    type: "Part-time",
+    type: "Part-time", 
     description: [
       "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
       "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.",

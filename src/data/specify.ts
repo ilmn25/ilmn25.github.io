@@ -1,6 +1,6 @@
 import { ASSETS_URL } from "../constants";
 
-export interface WorkflowStep {
+export interface SpecifyStep {
   title: string;
   description: string;
   imageUrl?: string;
@@ -8,7 +8,7 @@ export interface WorkflowStep {
 
 const SPA_BASE = `${ASSETS_URL}/spa`;
 
-export const WORKFLOW_STEPS: WorkflowStep[] = [
+export const SPECIFY_STEPS: SpecifyStep[] = [
   {
     title: "HTML Tree Extraction",
     description:
@@ -41,14 +41,14 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
   },
 ];
 
-export const WORKFLOW_HIGHLIGHTS = [
+export const SPECIFY_HIGHLIGHTS = [
   "Enables full migration of medium‑sized websites within a single day.",
   "Achieves 95% route coverage.",
   "Renames and reorganizes routing for improved clarity.",
   "Unifies the assets folder and standardizes asset naming to improve the efficiency of future modifications.",
 ];
 
-export const CODE_EXAMPLES = [
+export const SPECIFY_CODE_EXAMPLES = [
   {
     filename: "main.txt",
     content: `PROJECT NAME:
@@ -158,7 +158,7 @@ Embed | Google Maps iframe | https://maps.google.com/maps?q=威廉王國英語�
   },
 ];
 
-export const PROJECT_LINKS = {
+export const SPECIFY_LINKS = {
   before: "https://williamseducationhk.com/contact-us/",
   after: "https://ilmn25.github.io/260206/#/contact",
 };

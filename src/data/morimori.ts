@@ -1,6 +1,6 @@
 import { ASSETS_URL } from "../constants";
 
-export interface GameFeature {
+export interface MorimoriFeature {
   title: string;
   description: string;
   media: {
@@ -10,9 +10,9 @@ export interface GameFeature {
   };
 }
 
-const UNITY_BASE = `${ASSETS_URL}/unity`;
+const MORIMORI_BASE = `${ASSETS_URL}/unity`;
 
-export const GAME_FEATURES: GameFeature[] = [
+export const MORIMORI_FEATURES: MorimoriFeature[] = [
   {
     title: "Cubic Map Chunking System",
     description:
@@ -20,7 +20,7 @@ export const GAME_FEATURES: GameFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=dUQk0CVaHIA",
-      thumbnailUrl: `${UNITY_BASE}/15.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/15.png`,
     },
   },
   {
@@ -30,7 +30,7 @@ export const GAME_FEATURES: GameFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=cHSwMKmvdKo",
-      thumbnailUrl: `${UNITY_BASE}/22.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/22.png`,
     },
   },
   {
@@ -40,7 +40,7 @@ export const GAME_FEATURES: GameFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=pHN1In7Jz3c",
-      thumbnailUrl: `${UNITY_BASE}/1.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/1.png`,
     },
   },
   {
@@ -50,7 +50,7 @@ export const GAME_FEATURES: GameFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=h6h2cAwZeKU",
-      thumbnailUrl: `${UNITY_BASE}/18.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/18.png`,
     },
   },
   {
@@ -60,7 +60,7 @@ export const GAME_FEATURES: GameFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=1PNA1rKgP9I",
-      thumbnailUrl: `${UNITY_BASE}/10.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/10.png`,
     },
   },
   {
@@ -70,12 +70,12 @@ export const GAME_FEATURES: GameFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=Y2vqaBKJf1U",
-      thumbnailUrl: `${UNITY_BASE}/21.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/21.png`,
     },
   },
 ];
 
-export const EXTRA_VIDEOS = [
+export const MORIMORI_VIDEOS = [
   {
     url: "https://www.youtube.com/watch?v=__OSAV3GbGY",
     description: "Guns, melee weapons, and enemies.",
@@ -99,7 +99,7 @@ export const EXTRA_VIDEOS = [
   },
 ];
 
-export const GAME_GALLERY = Array.from(
+export const MORIMORI_GALLERY = Array.from(
   { length: 22 },
-  (_, i) => `${UNITY_BASE}/${i + 1}.png`,
+  (_, i) => `${MORIMORI_BASE}/${i + 1}.png`,
 );
