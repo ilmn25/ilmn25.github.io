@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
-import UnityProjectPage from "./components/UnityProjectPage";
-import TutorProjectPage from "./components/TutorProjectPage";
-import DiscordProjectPage from "./components/DiscordProjectPage";
-import SpaTreeProjectPage from "./components/SpaTreeProjectPage";
+import MorimoriProjectPage from "./components/MorimoriProjectPage";
+import CounterProjectPage from "./components/CounterProjectPage";
+import DisbatchProjectPage from "./components/DisbatchProjectPage";
+import SpecifyProjectPage from "./components/SpecifyProjectPage";
 import IllubotProjectPage from "./components/IllubotProjectPage";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
@@ -31,10 +31,10 @@ import {
 
 type PortfolioView =
   | "portfolio"
-  | "decay"
+  | "morimori"
   | "counter"
   | "disbatch"
-  | "specgen"
+  | "specify"
   | "illubot";
 
 const BASE_PATH = window.location.pathname.startsWith("/ilmn25")
@@ -64,10 +64,10 @@ const App: React.FC = () => {
       const subRoute = parts[1];
 
       const projectPages: Record<string, PortfolioView> = {
-        "decay": "decay",
-        "counter": "counter",
-        "disbatch": "disbatch",
-        "specgen": "specgen",
+        morimori: "morimori",
+        counter: "counter",
+        disbatch: "disbatch",
+        specify: "specify",
         illubot: "illubot",
       };
 
@@ -231,10 +231,10 @@ const App: React.FC = () => {
     }
 
     const projectPages: Record<string, PortfolioView> = {
-      "decay": "decay",
-      "counter": "counter",
-      "disbatch": "disbatch",
-      "specgen": "specgen",
+      morimori: "morimori",
+      counter: "counter",
+      disbatch: "disbatch",
+      specify: "specify",
       illubot: "illubot",
     };
 
@@ -254,14 +254,14 @@ const App: React.FC = () => {
     };
 
     switch (view) {
-      case "decay":
-        return <UnityProjectPage onBack={backAction} />;
+      case "morimori":
+        return <MorimoriProjectPage onBack={backAction} />;
       case "counter":
-        return <TutorProjectPage onBack={backAction} />;
+        return <CounterProjectPage onBack={backAction} />;
       case "disbatch":
-        return <DiscordProjectPage onBack={backAction} />;
-      case "specgen":
-        return <SpaTreeProjectPage onBack={backAction} />;
+        return <DisbatchProjectPage onBack={backAction} />;
+      case "specify":
+        return <SpecifyProjectPage onBack={backAction} />;
       case "illubot":
         return <IllubotProjectPage onBack={backAction} />;
       default:
@@ -274,13 +274,13 @@ const App: React.FC = () => {
     switch (id) {
       case "illubot":
         return <Bot {...iconProps} />;
-      case "decay":
+      case "morimori":
         return <Gamepad2 {...iconProps} />;
       case "counter":
         return <Database {...iconProps} />;
       case "disbatch":
         return <Monitor {...iconProps} />;
-      case "specgen":
+      case "specify":
         return <Terminal {...iconProps} />;
       case "illustrations":
         return <Palette {...iconProps} />;
@@ -546,6 +546,18 @@ const App: React.FC = () => {
                         <p className="text-slate-600 font-semibold text-sm mb-3 leading-normal">
                           {exp.company}
                         </p>
+                        {exp.tags && exp.tags.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5 mb-4">
+                            {exp.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-[9px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                         <ul className="space-y-1.5 mb-6">
                           {exp.description.map((item, j) => (
                             <li

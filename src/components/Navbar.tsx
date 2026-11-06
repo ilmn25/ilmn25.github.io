@@ -71,13 +71,13 @@ const Navbar: React.FC<NavbarProps> = ({
 
   const getProjectIcon = (id: string, className = "w-4 h-4") => {
     switch (id) {
-      case "decay":
+      case "morimori":
         return <Gamepad2 className={className} />;
       case "counter":
         return <Database className={className} />;
       case "disbatch":
         return <Monitor className={className} />;
-      case "specgen":
+      case "specify":
         return <Terminal className={className} />;
       case "illustrations":
         return <Palette className={className} />;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { GAME_GALLERY, GAME_FEATURES } from "../data/unityProject";
-import { TUTOR_GALLERY, TUTOR_FEATURES } from "../data/tutorProject";
-import { DISCORD_GALLERY } from "../data/discordTool";
-import { WORKFLOW_STEPS } from "../data/spaTree";
+import { MORIMORI_GALLERY, MORIMORI_FEATURES } from "../data/morimori";
+import { COUNTER_GALLERY, COUNTER_FEATURES } from "../data/counter";
+import { DISBATCH_GALLERY } from "../data/disbatch";
+import { SPECIFY_STEPS } from "../data/specify";
 import { PERSONAL_INFO } from "../constants";
 
 const BATCH_SIZE = 150; // Parallel load batches to balance speed and browser performance
@@ -21,12 +21,12 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     // 1. Gather all assets that MUST be loaded before showing the page
     const allAssets = [
       PERSONAL_INFO.avatar,
-      ...GAME_FEATURES.map((f) => f.media.thumbnailUrl),
-      ...TUTOR_FEATURES.map((f) => f.image),
-      ...WORKFLOW_STEPS.map((s) => s.imageUrl),
-      ...GAME_GALLERY,
-      ...TUTOR_GALLERY,
-      ...DISCORD_GALLERY,
+      ...MORIMORI_FEATURES.map((f) => f.media.thumbnailUrl),
+      ...COUNTER_FEATURES.map((f) => f.image),
+      ...SPECIFY_STEPS.map((s) => s.imageUrl),
+      ...MORIMORI_GALLERY,
+      ...COUNTER_GALLERY,
+      ...DISBATCH_GALLERY,
     ].filter((url): url is string => typeof url === "string");
 
     const uniqueAssets = Array.from(new Set(allAssets));

@@ -8,18 +8,18 @@ import {
   FileCode,
 } from "lucide-react";
 import {
-  WORKFLOW_STEPS,
-  WORKFLOW_HIGHLIGHTS,
-  CODE_EXAMPLES,
-  PROJECT_LINKS,
-} from "../data/spaTree";
+  SPECIFY_STEPS,
+  SPECIFY_HIGHLIGHTS,
+  SPECIFY_CODE_EXAMPLES,
+  SPECIFY_LINKS,
+} from "../data/specify";
 import RevealOnScroll from "./RevealOnScroll";
 
-interface SpaTreeProjectPageProps {
+interface SpecifyProjectPageProps {
   onBack: () => void;
 }
 
-const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
+const SpecifyProjectPage: React.FC<SpecifyProjectPageProps> = ({ onBack }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -79,7 +79,7 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
                 Key Outcomes
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-                {WORKFLOW_HIGHLIGHTS.map((item, i) => (
+                {SPECIFY_HIGHLIGHTS.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-4 h-4 rounded-full bg-slate-200 flex items-center justify-center shrink-0 mt-0.5">
                       <CheckCircle2 className="w-2.5 h-2.5 text-slate-500" />
@@ -105,14 +105,14 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
               </h2>
 
               <div className="space-y-10">
-                {WORKFLOW_STEPS.map((step, i) => (
+                {SPECIFY_STEPS.map((step, i) => (
                   <RevealOnScroll
                     key={i}
                     direction={i % 2 === 0 ? "right" : "left"}
                     delay={i * 50}
                   >
                     <div className="flex gap-6 md:gap-8 relative group">
-                      {i !== WORKFLOW_STEPS.length - 1 && (
+                      {i !== SPECIFY_STEPS.length - 1 && (
                         <div className="absolute left-5 md:left-6 top-12 bottom-[-2.5rem] w-px bg-slate-100"></div>
                       )}
                       <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center font-semibold shadow-md shadow-slate-200 relative z-10 text-sm">
@@ -154,7 +154,7 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
             </h2>
           </RevealOnScroll>
           <div className="space-y-6">
-            {CODE_EXAMPLES.map((example, i) => (
+            {SPECIFY_CODE_EXAMPLES.map((example, i) => (
               <RevealOnScroll key={i} direction="up" delay={i * 100}>
                 <div className="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
                   <div className="flex items-center justify-between px-5 py-3 bg-slate-800/50 border-b border-white/5">
@@ -194,7 +194,7 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
-                href={PROJECT_LINKS.before}
+                href={SPECIFY_LINKS.before}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-2.5 bg-white text-slate-900 border border-slate-200 rounded-full text-xs font-semibold hover:bg-slate-50 transition-all hover:scale-105 shadow-sm"
@@ -203,7 +203,7 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
                 Original Site
               </a>
               <a
-                href={PROJECT_LINKS.after}
+                href={SPECIFY_LINKS.after}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-2.5 bg-slate-900 text-white rounded-full text-xs font-semibold hover:bg-black transition-all hover:scale-105 shadow-md shadow-slate-200"
@@ -219,4 +219,4 @@ const SpaTreeProjectPage: React.FC<SpaTreeProjectPageProps> = ({ onBack }) => {
   );
 };
 
-export default SpaTreeProjectPage;
+export default SpecifyProjectPage;

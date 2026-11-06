@@ -12,18 +12,18 @@ import {
   Video,
 } from "lucide-react";
 import {
-  GAME_FEATURES,
-  GAME_GALLERY,
-  EXTRA_VIDEOS,
-} from "../data/unityProject";
+  MORIMORI_FEATURES,
+  MORIMORI_GALLERY,
+  MORIMORI_VIDEOS,
+} from "../data/morimori";
 import RevealOnScroll from "./RevealOnScroll";
 import ImageViewer from "./ImageViewer";
 
-interface UnityProjectPageProps {
+interface MorimoriProjectPageProps {
   onBack: () => void;
 }
 
-const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
+const MorimoriProjectPage: React.FC<MorimoriProjectPageProps> = ({ onBack }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -70,11 +70,11 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
             <header className="mb-10">
               <div className="flex items-center gap-4 mb-2">
                 <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                  Decay
+                  morimori
                 </h1>
               </div>
               <p className="text-slate-500 text-sm md:text-base max-w-2xl leading-relaxed">
-                A technical showcase focusing on procedural systems, pathfinding
+                A technical game project showcase focusing on procedural systems, pathfinding
                 algorithms, and optimization within the Unity engine.
               </p>
             </header>
@@ -89,7 +89,7 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
               </h2>
             </RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
-              {GAME_FEATURES.map((feature, idx) => {
+              {MORIMORI_FEATURES.map((feature, idx) => {
                 const yt = getYouTubeDetails(feature.media.url);
                 const displayThumbnail =
                   feature.media.thumbnailUrl || yt.autoThumbnail;
@@ -147,7 +147,7 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
               </p>
             </RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {EXTRA_VIDEOS.map((video, idx) => {
+              {MORIMORI_VIDEOS.map((video, idx) => {
                 const yt = getYouTubeDetails(video.url);
                 return (
                   <RevealOnScroll key={idx} direction="up" delay={idx * 50}>
@@ -186,7 +186,7 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
               </h2>
             </RevealOnScroll>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4">
-              {GAME_GALLERY.map((img, i) => (
+              {MORIMORI_GALLERY.map((img, i) => (
                 <RevealOnScroll key={i} direction="up" delay={(i % 6) * 50}>
                   <div
                     onClick={() => setSelectedImage(img)}
@@ -245,4 +245,4 @@ const UnityProjectPage: React.FC<UnityProjectPageProps> = ({ onBack }) => {
   );
 };
 
-export default UnityProjectPage;
+export default MorimoriProjectPage;

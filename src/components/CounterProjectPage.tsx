@@ -8,19 +8,19 @@ import {
   ZoomIn,
 } from "lucide-react";
 import {
-  TUTOR_FEATURES,
-  TUTOR_GALLERY,
-  TUTOR_HIGHLIGHTS,
-  TUTOR_GALLERY_GROUPS,
-} from "../data/tutorProject";
+  COUNTER_FEATURES,
+  COUNTER_GALLERY,
+  COUNTER_HIGHLIGHTS,
+  COUNTER_GALLERY_GROUPS,
+} from "../data/counter";
 import RevealOnScroll from "./RevealOnScroll";
 import ImageViewer from "./ImageViewer";
 
-interface TutorProjectPageProps {
+interface CounterProjectPageProps {
   onBack: () => void;
 }
 
-const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
+const CounterProjectPage: React.FC<CounterProjectPageProps> = ({ onBack }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
                 centers.
               </p>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
-                {TUTOR_HIGHLIGHTS.map((item, i) => (
+                {COUNTER_HIGHLIGHTS.map((item, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-2 text-slate-700"
@@ -84,11 +84,11 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
           <RevealOnScroll direction="scale" delay={200}>
             <div className="mb-16">
               <div
-                onClick={() => setSelectedImage(TUTOR_GALLERY[17])}
+                onClick={() => setSelectedImage(COUNTER_GALLERY[17])}
                 className="aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-2xl border border-slate-200 cursor-zoom-in"
               >
                 <img
-                  src={TUTOR_GALLERY[17]}
+                  src={COUNTER_GALLERY[17]}
                   alt="Dashboard Preview"
                   className="w-full h-full object-cover"
                 />
@@ -105,7 +105,7 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
               </h2>
             </RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {TUTOR_FEATURES.map((feature, idx) => (
+              {COUNTER_FEATURES.map((feature, idx) => (
                 <RevealOnScroll
                   key={idx}
                   direction={idx % 2 === 0 ? "left" : "right"}
@@ -151,7 +151,7 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
             </RevealOnScroll>
 
             <div className="space-y-12">
-              {Object.entries(TUTOR_GALLERY_GROUPS).map(
+              {Object.entries(COUNTER_GALLERY_GROUPS).map(
                 ([sectionName, imageIndices]) => {
                   const isPortrait =
                     sectionName === "Screen Size Responsive UI";
@@ -167,7 +167,7 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
                         className={`grid ${isPortrait ? "grid-cols-2 md:grid-cols-4 lg:grid-cols-5" : "grid-cols-2 md:grid-cols-3 lg:grid-cols-3"} gap-3 md:gap-4`}
                       >
                         {imageIndices.map((idx, groupIdx) => {
-                          const img = TUTOR_GALLERY[idx - 1];
+                          const img = COUNTER_GALLERY[idx - 1];
                           if (!img) return null;
                           return (
                             <RevealOnScroll
@@ -209,4 +209,4 @@ const TutorProjectPage: React.FC<TutorProjectPageProps> = ({ onBack }) => {
   );
 };
 
-export default TutorProjectPage;
+export default CounterProjectPage;

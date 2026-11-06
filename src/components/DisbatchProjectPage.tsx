@@ -13,19 +13,19 @@ import {
   ExternalLink,
 } from "lucide-react";
 import {
-  DISCORD_HIGHLIGHTS,
-  DISCORD_GALLERY,
-  DISCORD_STRUCTURED_STACK,
-  DISCORD_FEATURES,
-} from "../data/discordTool";
+  DISBATCH_HIGHLIGHTS,
+  DISBATCH_GALLERY,
+  DISBATCH_STRUCTURED_STACK,
+  DISBATCH_FEATURES,
+} from "../data/disbatch";
 import RevealOnScroll from "./RevealOnScroll";
 import ImageViewer from "./ImageViewer";
 
-interface DiscordProjectPageProps {
+interface DisbatchProjectPageProps {
   onBack: () => void;
 }
 
-const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
+const DisbatchProjectPage: React.FC<DisbatchProjectPageProps> = ({ onBack }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
                 </p>
 
                 <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
-                  {DISCORD_HIGHLIGHTS.map((item, i) => (
+                  {DISBATCH_HIGHLIGHTS.map((item, i) => (
                     <div
                       key={i}
                       className="flex items-center gap-2 text-slate-700"
@@ -94,7 +94,7 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
 
                 {/* Stack Column */}
                 <div className="flex flex-col gap-3.5 mb-10 border-l border-slate-100 pl-6">
-                  {DISCORD_STRUCTURED_STACK.map((item, i) => (
+                  {DISBATCH_STRUCTURED_STACK.map((item, i) => (
                     <div key={i} className="flex items-baseline gap-4 group">
                       <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-slate-400 w-24 shrink-0 group-hover:text-slate-900 transition-colors">
                         {item.category.replace("/", "")}
@@ -188,7 +188,7 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
               </h2>
             </RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {DISCORD_FEATURES.map((feature, idx) => (
+              {DISBATCH_FEATURES.map((feature, idx) => (
                 <RevealOnScroll
                   key={idx}
                   direction={idx % 2 === 0 ? "left" : "right"}
@@ -233,7 +233,7 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
               </h2>
             </RevealOnScroll>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4">
-              {DISCORD_GALLERY.map((img, i) => (
+              {DISBATCH_GALLERY.map((img, i) => (
                 <RevealOnScroll key={i} direction="up" delay={i * 50}>
                   <div
                     onClick={() => setSelectedImage(img)}
@@ -263,4 +263,4 @@ const DiscordProjectPage: React.FC<DiscordProjectPageProps> = ({ onBack }) => {
   );
 };
 
-export default DiscordProjectPage;
+export default DisbatchProjectPage;

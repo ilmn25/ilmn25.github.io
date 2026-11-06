@@ -17,7 +17,14 @@ export interface Experience {
   role: string;
   period: string;
   description: string[];
-  type?: "Full-time" | "Part-time" | "Freelance" | "Contract" | "Internship";
+  tags?: string[];
+  type?:
+    | "Full-time"
+    | "Part-time"
+    | "Freelance"
+    | "Contract"
+    | "Internship"
+    | "Service Learning";
   links?: {
     label: string;
     url: string;
