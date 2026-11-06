@@ -236,6 +236,7 @@ export const EXPERIENCES: Experience[] = [
     role: "Intern - Technical Infrastructure Services",
     period: "Jul. 2026 – Jun. 2027",
     type: "Full-time",
+    featured: true,
     tags: [
       "Python",
       "Bash",
@@ -251,12 +252,6 @@ export const EXPERIENCES: Experience[] = [
       "Engineered automated pipelines to handle daily inventory updates, SSH key provisioning, Networker backup scheduling, and deadline reminders, significantly reducing operational overhead.",
       "Automated the validation of network configuration, storage allocations, and account privilege across new servers, saving hours of review and auditing and preventing human checking error.",
     ],
-    links: [
-      {
-        label: "Hospital Authority",
-        url: "https://www.ha.org.hk/",
-      },
-    ],
     active: true,
   },
   {
@@ -264,6 +259,7 @@ export const EXPERIENCES: Experience[] = [
     role: "AI Project Assistant",
     period: "Oct. 2026 – Jun. 2027",
     type: "Part-time",
+    featured: true,
     tags: [
       "React",
       "TypeScript",
@@ -293,6 +289,7 @@ export const EXPERIENCES: Experience[] = [
     role: "STEM Instructor",
     period: "Jul. 2026",
     type: "Service Learning",
+    featured: true,
     tags: ["C++", "Arduino", "React", "Google AI Studio"],
     description: [
       "Prepared material and taught students embedded programming with C++ for Arduino-powered DIY 3D printers and AI-assisted web development using Google AI Studio.",
@@ -303,6 +300,7 @@ export const EXPERIENCES: Experience[] = [
     role: "Full Stack Developer & IT Support",
     period: "Jan. 2026 – Jun. 2026",
     type: "Part-time",
+    featured: true,
     tags: [
       "HTML",
       "CSS",
@@ -338,6 +336,7 @@ export const EXPERIENCES: Experience[] = [
     role: "Software Engineer - Winter Intern",
     period: "Dec. 2025 - Jan. 2026",
     type: "Full-time",
+    featured: true,
     tags: ["C#", "GitHub", "Excel", "Unity"],
     description: [
       "Developed application-wide settings, localization systems, and content pipelines, delivering 4 days ahead of schedule.",
@@ -355,7 +354,7 @@ export const EXPERIENCES: Experience[] = [
     company: "Freelance",
     role: "Digital Illustrator",
     period: "Aug. 2022 - present",
-    type: "Part-time",
+    type: "Part-time", 
     description: [
       "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
       "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.",

@@ -14,18 +14,11 @@ import {
   PROJECTS,
   SKILLS,
   EXPERIENCES,
-  PROJECT_NAV,
 } from "./constants";
 import {
   Github,
-  Palette,
-  Gamepad2,
-  Database,
-  Monitor,
-  Terminal,
-  ChevronRight,
+  ChevronDown,
   FileText,
-  Bot,
   ExternalLink,
 } from "lucide-react";
 
@@ -45,6 +38,7 @@ const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [view, setView] = useState<PortfolioView>("portfolio");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showAllExperiences, setShowAllExperiences] = useState(false);
   const scrollTimeoutRef = useRef<number | null>(null);
 
   const socialIconClass =
@@ -269,25 +263,12 @@ const App: React.FC = () => {
     }
   };
 
-  const getProjectIcon = (id: string) => {
-    const iconProps = { className: "w-4 h-4" };
-    switch (id) {
-      case "illubot":
-        return <Bot {...iconProps} />;
-      case "morimori":
-        return <Gamepad2 {...iconProps} />;
-      case "counter":
-        return <Database {...iconProps} />;
-      case "disbatch":
-        return <Monitor {...iconProps} />;
-      case "specify":
-        return <Terminal {...iconProps} />;
-      case "illustrations":
-        return <Palette {...iconProps} />;
-      default:
-        return <Monitor {...iconProps} />;
-    }
-  };
+  const featuredExperiences = EXPERIENCES.filter((exp) => exp.featured);
+  const hasHiddenExperiences = featuredExperiences.length < EXPERIENCES.length;
+  const visibleExperiences =
+    showAllExperiences || !hasHiddenExperiences
+      ? EXPERIENCES
+      : featuredExperiences;
 
   if (!isLoaded) {
     return <Preloader onComplete={() => setIsLoaded(true)} />;
@@ -404,30 +385,6 @@ const App: React.FC = () => {
                     </div>
                   </RevealOnScroll>
 
-                  <RevealOnScroll
-                    direction="up"
-                    delay={700}
-                    className="hidden md:flex flex-col items-start gap-3 w-full"
-                  >
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-1 ml-1">
-                      Featured Projects
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      {PROJECT_NAV.map((item) => (
-                        <button
-                          key={item.id}
-                          onClick={() => handleProjectClick(item.id)}
-                          className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-100 rounded-xl text-xs font-bold text-slate-600 hover:text-slate-900 hover:border-slate-300 hover:shadow-md transition-all group"
-                        >
-                          <span className="text-slate-400 group-hover:text-slate-900 transition-colors">
-                            {getProjectIcon(item.id)}
-                          </span>
-                          {item.label}
-                          <ChevronRight className="w-3 h-3 text-slate-300 group-hover:translate-x-0.5 transition-transform" />
-                        </button>
-                      ))}
-                    </div>
-                  </RevealOnScroll>
                 </div>
               </div>
             </header>
@@ -506,11 +463,28 @@ const App: React.FC = () => {
                   <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
                     Work Experience
                   </h2>
+                  {hasHiddenExperiences && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllExperiences((prev) => !prev)}
+                      aria-expanded={showAllExperiences}
+                      className="mt-5 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 hover:shadow-md active:scale-95 transition-all text-sm font-bold uppercase tracking-wider"
+                    >
+                      {showAllExperiences
+                        ? "Show highlights only"
+                        : "Show all experience"}
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform duration-300 ${
+                          showAllExperiences ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  )}
                 </RevealOnScroll>
                 <div className="relative border-l-2 border-slate-100 ml-4 space-y-6">
-                  {EXPERIENCES.map((exp, i) => (
+                  {visibleExperiences.map((exp, i) => (
                     <RevealOnScroll
-                      key={i}
+                      key={`${exp.company}-${exp.role}`}
                       direction="right"
                       delay={i * 150}
                       className="relative pl-10"

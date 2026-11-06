@@ -30,6 +30,8 @@ export interface Experience {
     url: string;
   }[];
   active?: boolean;
+  /** Shown when the experience list is collapsed to highlights only. */
+  featured?: boolean;
 }
 
 export interface SkillGroup {
