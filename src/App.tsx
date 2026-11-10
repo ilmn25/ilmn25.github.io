@@ -9,6 +9,7 @@ import IllubotProjectPage from "./components/IllubotProjectPage";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
+import ImageViewer from "./components/ImageViewer";
 import {
   PERSONAL_INFO,
   PROJECTS,
@@ -20,6 +21,7 @@ import {
   ChevronDown,
   FileText,
   ExternalLink,
+  Expand,
 } from "lucide-react";
 
 type PortfolioView =
@@ -39,6 +41,9 @@ const App: React.FC = () => {
   const [view, setView] = useState<PortfolioView>("portfolio");
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showAllExperiences, setShowAllExperiences] = useState(false);
+  const [selectedExperienceImage, setSelectedExperienceImage] = useState<
+    string | null
+  >(null);
   const scrollTimeoutRef = useRef<number | null>(null);
 
   const socialIconClass =
@@ -545,6 +550,33 @@ const App: React.FC = () => {
                             </li>
                           ))}
                         </ul>
+                        {exp.images && exp.images.length > 0 && (
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                            {exp.images.map((image) => (
+                              <button
+                                key={image.src}
+                                type="button"
+                                onClick={() =>
+                                  setSelectedExperienceImage(image.src)
+                                }
+                                aria-label={`View photo: ${image.alt}`}
+                                className="group relative aspect-[4/3] overflow-hidden rounded-lg border border-slate-200 bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900/20"
+                              >
+                                <img
+                                  src={image.src}
+                                  alt={image.alt}
+                                  loading="lazy"
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                                />
+                                <span className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-300" />
+                                <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-white/90 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-600 opacity-0 shadow-sm backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
+                                  <Expand className="w-3 h-3" />
+                                  View
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+                        )}
                         {exp.links && exp.links.length > 0 && (
                           <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-slate-50">
                             {exp.links.map((link, j) => (
@@ -599,6 +631,10 @@ const App: React.FC = () => {
             </section>
 
             <ScrollToTop />
+            <ImageViewer
+              src={selectedExperienceImage}
+              onClose={() => setSelectedExperienceImage(null)}
+            />
             <footer className="py-10 border-t border-slate-100 bg-white">
               <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16 text-center">
                 <p className="text-slate-400 text-xs font-mono tracking-widest">

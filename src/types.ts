@@ -32,6 +32,11 @@ export interface Experience {
   active?: boolean;
   /** Shown when the experience list is collapsed to highlights only. */
   featured?: boolean;
+  /** Optional workplace photos shown inside the experience card. */
+  images?: {
+    src: string;
+    alt: string;
+  }[];
 }
 
 export interface SkillGroup {

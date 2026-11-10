@@ -252,6 +252,16 @@ export const EXPERIENCES: Experience[] = [
       "Engineered automated pipelines to handle daily inventory updates, SSH key provisioning, Networker backup scheduling, and deadline reminders, significantly reducing operational overhead.",
       "Automated the validation of network configuration, storage allocations, and account privilege across new servers, saving hours of review and auditing and preventing human checking error.",
     ],
+    images: [
+      {
+        src: `${import.meta.env.BASE_URL}ha/1.jpg`,
+        alt: "Reception and pantry area of the Hospital Authority office",
+      },
+      {
+        src: `${import.meta.env.BASE_URL}ha/2.jpg`,
+        alt: "Multi-monitor workstation used for infrastructure automation work",
+      },
+    ],
     active: true,
   },
   {
