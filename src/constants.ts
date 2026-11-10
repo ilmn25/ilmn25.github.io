@@ -3,12 +3,6 @@ import { Project, Experience, SkillGroup } from "./types";
 export const ASSETS_URL =
   "https://raw.githubusercontent.com/ilmn25/ilmn25.github.io/refs/heads/prod/assets";
 
-/**
- * Bundled images served from `public/`, so they resolve in dev, preview and
- * production builds without depending on the raw GitHub assets branch.
- */
-const BUNDLED_ASSETS_URL = import.meta.env.BASE_URL;
-
 export const PERSONAL_INFO = {
   name: "illu",
   avatar: `${ASSETS_URL}/pfp.png`,
@@ -135,7 +129,7 @@ export const PROJECTS: Project[] = [
       "A high‑performance MCP AI personal agent capable of reducing daily workload for multi‑step digital tasks.",
     category: "ai",
     image: {
-      src: `${BUNDLED_ASSETS_URL}projects/illubot.jpg`,
+      src: `${ASSETS_URL}/illubot/1.png`,
       alt: "illubot chat interface answering a question from conversation memory",
     },
     tags: ["AI Agent", "MCP", "LLM", "RAG", "Pinecone", "Vector DB"],
@@ -153,7 +147,7 @@ export const PROJECTS: Project[] = [
       "A three-tier automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
     image: {
-      src: `${BUNDLED_ASSETS_URL}projects/disbatch.jpg`,
+      src: `${ASSETS_URL}/discord/1.png`,
       alt: "Disbatch post composer interface",
     },
     tags: [
@@ -181,7 +175,7 @@ export const PROJECTS: Project[] = [
       "A survival game featuring infinite procedural generation and optimized map partitioning.",
     category: "game",
     image: {
-      src: `${BUNDLED_ASSETS_URL}projects/morimori.jpg`,
+      src: `${ASSETS_URL}/unity/1.png`,
       alt: "morimori procedural world populated with characters",
     },
     tags: ["Unity", "C#"],
@@ -200,7 +194,7 @@ export const PROJECTS: Project[] = [
       "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
     image: {
-      src: `${BUNDLED_ASSETS_URL}projects/counter.jpg`,
+      src: `${ASSETS_URL}/tutor/1.png`,
       alt: "Counter student directory with portal access management",
     },
     tags: ["Supabase", "PostgreSQL", "React", "Tailwind", "Stripe"],
@@ -219,7 +213,7 @@ export const PROJECTS: Project[] = [
       "A prompt driven workflow to speed up the migration of legacy SPAs to AI-first IDEs such as Google AI Studio.",
     category: "workflow",
     image: {
-      src: `${BUNDLED_ASSETS_URL}projects/specify.jpg`,
+      src: `${ASSETS_URL}/spa/1.png`,
       alt: "Generated specification output for a migrated site",
     },
     tags: ["Prompt Engineering", "Specification Generation"],
@@ -237,7 +231,7 @@ export const PROJECTS: Project[] = [
     description: "My digital art portfolio site.",
     category: "art",
     image: {
-      src: `${BUNDLED_ASSETS_URL}projects/illustrations.jpg`,
+      src: `${ASSETS_URL}/art/colored/1.png`,
       alt: "Colored digital illustration of an original character",
     },
     tags: ["cloudflare", "dns", "design"],
@@ -284,19 +278,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-<<<<<<< HEAD
-        src: `${BUNDLED_ASSETS_URL}ha/1.jpg`,
-        alt: "Reception and pantry area of the Hospital Authority office",
-      },
-      {
-        src: `${BUNDLED_ASSETS_URL}ha/2.jpg`,
-=======
         src: `${ASSETS_URL}/ha/1.jpg`,
         alt: "Reception and pantry area of the Hospital Authority office",
       },
       {
         src: `${ASSETS_URL}/ha/2.jpg`,
->>>>>>> 3ea0583ac7564c205c2f3aea1eabb73e5af70dd9
         alt: "Multi-monitor workstation used for infrastructure automation work",
       },
     ],
@@ -334,11 +320,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${BUNDLED_ASSETS_URL}fcms/1.jpg`,
+        src: `${ASSETS_URL}/fcms/1.jpg`,
         alt: "Capture session software tracking accelerometer telemetry beside the training hall",
       },
       {
-        src: `${BUNDLED_ASSETS_URL}fcms/2.jpg`,
+        src: `${ASSETS_URL}/fcms/2.jpg`,
         alt: "Sports hall set up with a numbered target board during data collection",
       },
     ],
