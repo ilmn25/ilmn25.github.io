@@ -284,11 +284,19 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
+<<<<<<< HEAD
         src: `${BUNDLED_ASSETS_URL}ha/1.jpg`,
         alt: "Reception and pantry area of the Hospital Authority office",
       },
       {
         src: `${BUNDLED_ASSETS_URL}ha/2.jpg`,
+=======
+        src: `${ASSETS_URL}/ha/1.jpg`,
+        alt: "Reception and pantry area of the Hospital Authority office",
+      },
+      {
+        src: `${ASSETS_URL}/ha/2.jpg`,
+>>>>>>> 3ea0583ac7564c205c2f3aea1eabb73e5af70dd9
         alt: "Multi-monitor workstation used for infrastructure automation work",
       },
     ],
