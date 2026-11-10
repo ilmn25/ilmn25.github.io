@@ -277,6 +277,17 @@ export const EXPERIENCES: Experience[] = [
   }, 
   {
     company: "FCMS, The Hong Kong Polytechnic University",
+    role: "Data Science Project Assistant",
+    period: "Nov. 2027",
+    type: "Part-time",
+    featured: false, 
+    description: [
+      "Recorded accelerometer telemetry and synchronized video footage from official Hong Kong national football team athletes for AI training dataset generation."
+    ],
+    active: false,
+  },
+  {
+    company: "FCMS, The Hong Kong Polytechnic University",
     role: "PolyU Info Day Student Assistant",
     period: "Oct. 2026",
     type: "Part-time",
