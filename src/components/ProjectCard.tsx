@@ -56,6 +56,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         </div>
       </div>
 
+      {project.image && (
+        <div className="relative aspect-[16/10] mb-5 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+          <img
+            src={project.image.src}
+            alt={project.image.alt}
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
+
       <h3 className="text-base md:text-lg font-bold mb-1.5 text-slate-900 group-hover:text-slate-700 transition-colors">
         {project.title}
       </h3>

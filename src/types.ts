@@ -10,6 +10,11 @@ export interface Project {
   }[];
   category: "game" | "web" | "art" | "workflow" | "ai";
   highlights: string[];
+  /** Optional cover image shown at the top of the project card. */
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 export interface Experience {
