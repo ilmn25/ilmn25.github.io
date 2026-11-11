@@ -134,9 +134,7 @@ export const PROJECTS: Project[] = [
     },
     tags: ["AI Agent", "MCP", "LLM", "RAG", "Pinecone", "Vector DB"],
     highlights: [
-      "Integrated support for multiple LLM providers, enabling cost‑free usage by seamlessly switching between endpoints when the free tier of one provider is temporarily exhausted.",
-      "Introduced hands free use via voice command, or remote access via Discord Bot.",
-      "Implemented long-term memory retrieval utilizing RAG with Pinecone vector database.",
+      "Built an MCP-based AI agent integrating retrieval-augmented generation (RAG) and vector memory using Pinecone, enabling persistent context retrieval and multi-step task execution.",
     ],
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/260228" }],
   },
@@ -160,8 +158,8 @@ export const PROJECTS: Project[] = [
       "GitHub Actions",
     ],
     highlights: [
-      "Developed a system that automates organic marketing by posting across multiple Discord servers, reducing effort from 2–3 hours to just minutes after setup.",
-      "Implemented containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
+      "Developed a marketing automation tool for Discord, reducing manual labour of bulk messaging from hours to just minutes.",
+      "Designed containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
     ],
     links: [
       { label: "Landing Page", url: "https://portfolio.ilmnn.net/Disbatch/" },
@@ -180,10 +178,8 @@ export const PROJECTS: Project[] = [
     },
     tags: ["Unity", "C#"],
     highlights: [
-      "Built an optimized map partitioning system that manages world data in 3D chunks, enabling near-infinite procedural world generation.",
-      "Developed a custom set of DevTools for streamlining asset creation and debugging, boosting the speed of adding content by ~80%.",
-      "Designed interconnected pathfinding and behavioral algorithms to address limitations in Unity’s NavMesh, including heuristics for parkour.",
-      "Integrated Unity's Job System and Burst Compiler to offload heavy computations, allowing the game to run at 200-400 FPS with no frame drops on a mid-end PC.",
+      "Built an optimized map partitioning system that manages world data in 3D chunks, enabling vast procedural world generation.",
+      "Achieved 200-400 FPS on integrated graphics through Unity Job System parallelization and Burst Compiler optimization.",
     ],
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/240809" }],
   },
@@ -242,16 +238,6 @@ export const PROJECTS: Project[] = [
     ],
     links: [{ label: "ilmnn.net", url: "https://ilmnn.net/illustrations/colored" }],
   },
-  // {
-  //   id: "ilmnnn-website",
-  //   title: "ILMNNNNNNNN",
-  //   description:
-  //     "This is a work-in-progress conceptual mockup for a clothing and accessories brand.",
-  //   category: "web",
-  //   tags: [],
-  //   highlights: [],
-  //   links: [],
-  // },
 ];
 
 export const EXPERIENCES: Experience[] = [ 
@@ -291,7 +277,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "FCMS, The Hong Kong Polytechnic University",
     role: "AI Project Assistant",
-    period: "Oct. 2026 – Jun. 2027",
+    period: "Jul. 2026 – Jun. 2027",
     type: "Part-time",
     featured: true,
     tags: [
@@ -299,7 +285,6 @@ export const EXPERIENCES: Experience[] = [
       "TypeScript",
       "FastAPI",
       "Docker",
-      "DeepSeek",
       "AI Orchestration",
       "Video Generation",
     ],
@@ -366,17 +351,17 @@ export const EXPERIENCES: Experience[] = [
       "Supabase",
     ],
     description: [
-      "Developed an internal ERP/CRM administrative system, working with staff and owners to understand business pain points, saving staff 30+ hours per month.",
-      "Reliably integrated features in a live environment with 1200+ booking data entries, including RBAC, payment reconciliation, and rollback systems.",
-      "Researched, procured, and integrated biometric scanning hardware to enable self check-in for younger students, fully automating attendance and eliminating manual entry errors.",
+      "Built and deployed an ERP/CRM platform used by teaching staff, automating administrative workflows and reducing manual workload by 30+ hours per month.",
+      "Delivered RBAC, payment reconciliation, and rollback functionality in a production environment containing 1,200+ booking records while maintaining system reliability.",
+      "Researched, procured, and integrated biometric attendance hardware, enabling fully automated student check-ins and eliminating manual attendance-entry errors.",
     ],
     images: [
       {
-      src: `${ASSETS_URL}/tutor/18.png`,
+        src: `${ASSETS_URL}/tutor/18.png`,
         alt: "Reception and pantry area of the Hospital Authority office",
       },
       {
-      src: `${ASSETS_URL}/tutor/13.png`,
+        src: `${ASSETS_URL}/tutor/13.png`,
         alt: "Multi-monitor workstation used for infrastructure automation work",
       },
     ],
@@ -395,6 +380,12 @@ export const EXPERIENCES: Experience[] = [
     description: [
       "Assisted in the operations of the PolyU Young Minds in Computer and Mathematical Sciences Competition",
     ],
+    images: [
+      {
+        src: `${ASSETS_URL}/fcms/3.jpg`,
+        alt: "IT Lab where a stage of the competition was held",
+      }, 
+    ],
   },
   {
     company: "AWIL Group Limited",
@@ -404,9 +395,9 @@ export const EXPERIENCES: Experience[] = [
     featured: true,
     tags: ["C#", "GitHub", "Excel", "Unity"],
     description: [
+      "Audited outdated specs and authored onboarding documentation, reducing intern ramp-up time from 2 weeks to 3–4 days.",
       "Developed application-wide settings, localization systems, and content pipelines, delivering 4 days ahead of schedule.",
       "Resolved asset pipeline issues and guided interns unfamiliar with best practices, preventing ~3 days of wasted work while influencing project direction with budget/scalability insights.",
-      "Audited outdated specs and authored onboarding documentation, reducing intern ramp-up time from 2 weeks to 3–4 days.",
     ],
     links: [
       {
@@ -423,6 +414,12 @@ export const EXPERIENCES: Experience[] = [
     description: [
       "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
       "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.",
+    ],
+    images: [
+      {
+        src: `${ASSETS_URL}/art/sketch/17.png`,
+        alt: "IT Lab where a stage of the competit  ion was held",
+      }, 
     ],
   },
 ];

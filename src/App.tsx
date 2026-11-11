@@ -476,8 +476,8 @@ const App: React.FC = () => {
                       className="mt-5 inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:border-slate-300 hover:shadow-md active:scale-95 transition-all text-sm font-bold uppercase tracking-wider"
                     >
                       {showAllExperiences
-                        ? "Show highlights only"
-                        : "Show all experience"}
+                        ? "Show featured only"
+                        : "Show all"}
                       <ChevronDown
                         className={`w-5 h-5 transition-transform duration-300 ${
                           showAllExperiences ? "rotate-180" : ""
@@ -551,7 +551,13 @@ const App: React.FC = () => {
                           ))}
                         </ul>
                         {exp.images && exp.images.length > 0 && (
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                          <div
+                            className={`grid gap-3 mb-4 ${
+                              exp.images.length > 1
+                                ? "grid-cols-1 sm:grid-cols-2"
+                                : "grid-cols-1"
+                            }`}
+                          >
                             {exp.images.map((image) => (
                               <button
                                 key={image.src}
