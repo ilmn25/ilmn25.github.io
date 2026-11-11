@@ -99,7 +99,12 @@ export const MORIMORI_VIDEOS = [
   },
 ];
 
-export const MORIMORI_GALLERY = Array.from(
-  { length: 22 },
-  (_, i) => `${MORIMORI_BASE}/${i + 1}.png`,
+// Newest screenshots are numbered after the original 1-22 set and shown first.
+const MORIMORI_GALLERY_ORDER = [
+  23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
+  12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+];
+
+export const MORIMORI_GALLERY = MORIMORI_GALLERY_ORDER.map(
+  (n) => `${MORIMORI_BASE}/${n}.png`,
 );
