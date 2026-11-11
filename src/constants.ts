@@ -129,8 +129,8 @@ export const PROJECTS: Project[] = [
       "A high‑performance MCP AI personal agent capable of reducing daily workload for multi‑step digital tasks.",
     category: "ai",
     image: {
-      src: `${ASSETS_URL}/illubot/1.png`,
-      alt: "illubot chat interface answering a question from conversation memory",
+      src: `${ASSETS_URL}/illubot/3.png`,
+      alt: "illubot console logs for speech input",
     },
     tags: ["AI Agent", "MCP", "LLM", "RAG", "Pinecone", "Vector DB"],
     highlights: [
@@ -194,8 +194,8 @@ export const PROJECTS: Project[] = [
       "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
     image: {
-      src: `${ASSETS_URL}/tutor/1.png`,
-      alt: "Counter student directory with portal access management",
+      src: `${ASSETS_URL}/tutor/18.png`,
+      alt: "Counter bookings page",
     },
     tags: ["Supabase", "PostgreSQL", "React", "Tailwind", "Stripe"],
     highlights: [
@@ -213,7 +213,7 @@ export const PROJECTS: Project[] = [
       "A prompt driven workflow to speed up the migration of legacy SPAs to AI-first IDEs such as Google AI Studio.",
     category: "workflow",
     image: {
-      src: `${ASSETS_URL}/spa/1.png`,
+      src: `${ASSETS_URL}/spa/3.png`,
       alt: "Generated specification output for a migrated site",
     },
     tags: ["Prompt Engineering", "Specification Generation"],
@@ -231,8 +231,8 @@ export const PROJECTS: Project[] = [
     description: "My digital art portfolio site.",
     category: "art",
     image: {
-      src: `${ASSETS_URL}/art/colored/1.png`,
-      alt: "Colored digital illustration of an original character",
+      src: `${ASSETS_URL}/art/colored/19.png`,
+      alt: "Colored digital illustration of a character",
     },
     tags: ["cloudflare", "dns", "design"],
     highlights: [
@@ -369,6 +369,16 @@ export const EXPERIENCES: Experience[] = [
       "Developed an internal ERP/CRM administrative system, working with staff and owners to understand business pain points, saving staff 30+ hours per month.",
       "Reliably integrated features in a live environment with 1200+ booking data entries, including RBAC, payment reconciliation, and rollback systems.",
       "Researched, procured, and integrated biometric scanning hardware to enable self check-in for younger students, fully automating attendance and eliminating manual entry errors.",
+    ],
+    images: [
+      {
+      src: `${ASSETS_URL}/tutor/18.png`,
+        alt: "Reception and pantry area of the Hospital Authority office",
+      },
+      {
+      src: `${ASSETS_URL}/tutor/13.png`,
+        alt: "Multi-monitor workstation used for infrastructure automation work",
+      },
     ],
     links: [
       {
