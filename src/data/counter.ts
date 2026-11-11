@@ -7,7 +7,7 @@ export interface CounterFeature {
   image: string;
 }
 
-const COUNTER_BASE = `${ASSETS_URL}/tutor`;
+const COUNTER_BASE = `${ASSETS_URL}/counter`;
 
 export const COUNTER_HIGHLIGHTS = [
   "Used by a live tutor centre in Hung Hom",

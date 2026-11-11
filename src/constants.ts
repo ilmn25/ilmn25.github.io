@@ -33,7 +33,7 @@ export const PERSONAL_INFO = {
 
 export const PROJECT_NAV = [
   { id: "illubot", label: "illubot", category: "MCP Agent" },
-  { id: "morimori", label: "morimori", category: "Game Dev" },
+  { id: "morimori", label: "Morimori", category: "Game Dev" },
   {
     id: "counter",
     label: "Counter",
@@ -145,7 +145,7 @@ export const PROJECTS: Project[] = [
       "A three-tier automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
     image: {
-      src: `${ASSETS_URL}/discord/1.png`,
+      src: `${ASSETS_URL}/disbatch/1.png`,
       alt: "Disbatch post composer interface",
     },
     tags: [
@@ -168,13 +168,13 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "morimori",
-    title: "morimori",
+    title: "Morimori",
     description:
       "A survival game featuring infinite procedural generation and optimized map partitioning.",
     category: "game",
     image: {
-      src: `${ASSETS_URL}/unity/1.png`,
-      alt: "morimori procedural world populated with characters",
+      src: `${ASSETS_URL}/morimori/1.png`,
+      alt: "Morimori procedural world populated with characters",
     },
     tags: ["Unity", "C#"],
     highlights: [
@@ -190,7 +190,7 @@ export const PROJECTS: Project[] = [
       "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
     image: {
-      src: `${ASSETS_URL}/tutor/18.png`,
+      src: `${ASSETS_URL}/counter/18.png`,
       alt: "Counter bookings page",
     },
     tags: ["Supabase", "PostgreSQL", "React", "Tailwind", "Stripe"],
@@ -209,7 +209,7 @@ export const PROJECTS: Project[] = [
       "A prompt driven workflow to speed up the migration of legacy SPAs to AI-first IDEs such as Google AI Studio.",
     category: "workflow",
     image: {
-      src: `${ASSETS_URL}/spa/3.png`,
+      src: `${ASSETS_URL}/specify/3.png`,
       alt: "Generated specification output for a migrated site",
     },
     tags: ["Prompt Engineering", "Specification Generation"],
@@ -227,7 +227,7 @@ export const PROJECTS: Project[] = [
     description: "My digital art portfolio site.",
     category: "art",
     image: {
-      src: `${ASSETS_URL}/art/colored/19.png`,
+      src: `${ASSETS_URL}/illustrations/colored/19.png`,
       alt: "Colored digital illustration of a character",
     },
     tags: ["cloudflare", "dns", "design"],
@@ -357,11 +357,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/tutor/18.png`,
+        src: `${ASSETS_URL}/counter/18.png`,
         alt: "Reception and pantry area of the Hospital Authority office",
       },
       {
-        src: `${ASSETS_URL}/tutor/13.png`,
+        src: `${ASSETS_URL}/counter/13.png`,
         alt: "Multi-monitor workstation used for infrastructure automation work",
       },
     ],
@@ -417,7 +417,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/art/sketch/17.png`,
+        src: `${ASSETS_URL}/illustrations/sketch/17.png`,
         alt: "IT Lab where a stage of the competit  ion was held",
       }, 
     ],

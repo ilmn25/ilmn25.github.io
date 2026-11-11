@@ -10,7 +10,7 @@ export interface MorimoriFeature {
   };
 }
 
-const MORIMORI_BASE = `${ASSETS_URL}/unity`;
+const MORIMORI_BASE = `${ASSETS_URL}/morimori`;
 
 export const MORIMORI_FEATURES: MorimoriFeature[] = [
   {

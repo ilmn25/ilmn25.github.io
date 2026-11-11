@@ -7,7 +7,7 @@ export interface DisbatchFeature {
   image: string;
 }
 
-const DISBATCH_BASE = `${ASSETS_URL}/discord`;
+const DISBATCH_BASE = `${ASSETS_URL}/disbatch`;
 
 export const DISBATCH_HIGHLIGHTS = [
   "Cloud-hosted architecture",
@@ -57,14 +57,9 @@ export const DISBATCH_STRUCTURED_STACK = [
   { category: "Discord", tools: ["dolfies/discord.py-self"] },
 ];
 
-export const DISBATCH_GALLERY = [
-  `${DISBATCH_BASE}/9.png`,
-  `${DISBATCH_BASE}/8.png`,
-  `${DISBATCH_BASE}/7.png`,
-  `${DISBATCH_BASE}/10.png`,
-  `${DISBATCH_BASE}/6.png`,
-  `${DISBATCH_BASE}/5.png`,
-  `${DISBATCH_BASE}/4.png`,
-  `${DISBATCH_BASE}/3.png`,
-  `${DISBATCH_BASE}/1.png`,
-];
+// Screenshots are numbered in display order in assets/disbatch (6.png was removed).
+const DISBATCH_SCREENSHOTS = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
+export const DISBATCH_GALLERY = DISBATCH_SCREENSHOTS.map(
+  (n) => `${DISBATCH_BASE}/${n}.png`,
+);
