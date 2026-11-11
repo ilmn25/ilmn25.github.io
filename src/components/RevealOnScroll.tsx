@@ -5,6 +5,7 @@ interface RevealOnScrollProps {
   direction: "left" | "right" | "up" | "scale";
   delay?: number;
   className?: string;
+  fast?: boolean;
 }
 
 const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
@@ -12,6 +13,7 @@ const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
   direction,
   delay = 0,
   className = "",
+  fast = false,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [, setIsTransitioning] = useState(() => !!(window as any).__isTransitioning);
@@ -66,7 +68,7 @@ const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
   return (
     <div
       ref={ref}
-      className={`reveal-base reveal-${direction} ${isVisible ? "revealed" : ""} ${className}`}
+      className={`reveal-base reveal-${direction} ${isVisible ? "revealed" : ""} ${fast ? "reveal-fast" : ""} ${className}`}
       style={{ transitionDelay: isVisible ? `${delay}ms` : "0ms" }}
     >
       {children}

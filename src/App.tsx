@@ -491,7 +491,8 @@ const App: React.FC = () => {
                     <RevealOnScroll
                       key={`${exp.company}-${exp.role}`}
                       direction="right"
-                      delay={i * 150}
+                      delay={Math.min(i, 3) * 75}
+                      fast
                       className="relative pl-10"
                     >
                       <div className={`absolute left-[-9px] top-1 w-4 h-4 rounded-full border-4 border-white ${
@@ -572,6 +573,7 @@ const App: React.FC = () => {
                                   src={image.src}
                                   alt={image.alt}
                                   loading="lazy"
+                                  decoding="async"
                                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                                 />
                                 <span className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-300" />
