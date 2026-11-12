@@ -36,6 +36,14 @@ const BASE_PATH = window.location.pathname.startsWith("/ilmn25")
   ? "/ilmn25"
   : "";
 
+const PROJECT_VIEWS: Record<string, PortfolioView> = {
+  morimori: "morimori",
+  counter: "counter",
+  disbatch: "disbatch",
+  specify: "specify",
+  illubot: "illubot",
+};
+
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [view, setView] = useState<PortfolioView>("portfolio");
@@ -62,16 +70,8 @@ const App: React.FC = () => {
       const mainRoute = parts[0];
       const subRoute = parts[1];
 
-      const projectPages: Record<string, PortfolioView> = {
-        morimori: "morimori",
-        counter: "counter",
-        disbatch: "disbatch",
-        specify: "specify",
-        illubot: "illubot",
-      };
-
-      if (projectPages[mainRoute]) {
-        setView(projectPages[mainRoute]);
+      if (PROJECT_VIEWS[mainRoute]) {
+        setView(PROJECT_VIEWS[mainRoute]);
         window.scrollTo({ top: 0, behavior: "instant" });
       } else {
         // If we were in a project view, switch back to portfolio
@@ -229,15 +229,7 @@ const App: React.FC = () => {
       return;
     }
 
-    const projectPages: Record<string, PortfolioView> = {
-      morimori: "morimori",
-      counter: "counter",
-      disbatch: "disbatch",
-      specify: "specify",
-      illubot: "illubot",
-    };
-
-    const targetView = projectPages[projectId] || "portfolio";
+    const targetView = PROJECT_VIEWS[projectId] || "portfolio";
     const targetPath = `/${projectId}`;
 
     executeCoolTransition(() => {
@@ -583,18 +575,36 @@ const App: React.FC = () => {
                         )}
                         {exp.links && exp.links.length > 0 && (
                           <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-slate-50">
-                            {exp.links.map((link, j) => (
-                              <a
-                                key={j}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-slate-600 transition-all"
-                              >
-                                <ExternalLink className="w-3.5 h-3.5" />
-                                {link.label}
-                              </a>
-                            ))}
+                            {exp.links.map((link, j) => {
+                              const isInternal = link.url.startsWith("/");
+                              return (
+                                <a
+                                  key={j}
+                                  href={
+                                    isInternal
+                                      ? `${BASE_PATH}${link.url}`
+                                      : link.url
+                                  }
+                                  target={isInternal ? undefined : "_blank"}
+                                  rel={
+                                    isInternal
+                                      ? undefined
+                                      : "noopener noreferrer"
+                                  }
+                                  onClick={(e) => {
+                                    if (!isInternal) return;
+                                    e.preventDefault();
+                                    handleProjectClick(
+                                      link.url.slice(1).split("/")[0],
+                                    );
+                                  }}
+                                  className="flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-slate-600 transition-all"
+                                >
+                                  <ExternalLink className="w-3.5 h-3.5" />
+                                  {link.label}
+                                </a>
+                              );
+                            })}
                           </div>
                         )}
                       </div>
