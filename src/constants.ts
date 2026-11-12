@@ -292,6 +292,16 @@ export const EXPERIENCES: Experience[] = [
       "Collaborating on a faculty research project to engineer an autonomous pipeline that generates personalized AI educational content for diverse user profiles.",
       "Formulating multi-shot prompt architectures and script generation workflows to dynamically adjust lesson pacing, tone, and complexity based on target demographics.",
     ],
+    images: [
+      {
+        src: `${ASSETS_URL}/fcms/6.png`,
+        alt: "Post-render editor",
+      },
+      {
+        src: `${ASSETS_URL}/fcms/7.png`,
+        alt: "Script and prompt editor pre-render",
+      },
+    ],
     active: true,
   }, 
   {
