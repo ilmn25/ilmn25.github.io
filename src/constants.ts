@@ -334,6 +334,16 @@ export const EXPERIENCES: Experience[] = [
     description: [
       "Prepared material and taught students embedded programming with C++ for Arduino-powered DIY 3D printers and AI-assisted web development using Google AI Studio.",
     ],
+    images: [
+      {
+        src: `${ASSETS_URL}/fcms/4.jpg`,
+        alt: "Classroom",
+      }, 
+      {
+        src: `${ASSETS_URL}/fcms/5.png`,
+        alt: "Cookie printed via Arduino-powered 3D printer, controlled with C++ code",
+      }, 
+    ],
   },
   {
     company: "Time Super Centre",
