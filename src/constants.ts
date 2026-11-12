@@ -28,6 +28,7 @@ export const PERSONAL_INFO = {
     github: "https://github.com/ilmn25",
     resume:
       "https://docs.google.com/document/d/1EXzindBoId3J1ePtDNtXYuC0-K_bDDBOZi4cdc-akdk/edit?usp=sharing",
+    cv: "https://docs.google.com/document/d/1EXzindBoId3J1ePtDNtXYuC0-K_bDDBOZi4cdc-akdk/edit?tab=t.y8yet742xmnd",
   },
 };
 

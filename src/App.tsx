@@ -10,6 +10,7 @@ import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
 import ImageViewer from "./components/ImageViewer";
+import ResumeMenu from "./components/ResumeMenu";
 import {
   PERSONAL_INFO,
   PROJECTS,
@@ -19,7 +20,6 @@ import {
 import {
   Github,
   ChevronDown,
-  FileText,
   ExternalLink,
   Expand,
 } from "lucide-react";
@@ -369,15 +369,11 @@ const App: React.FC = () => {
 
                   <RevealOnScroll direction="up" delay={600}>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10">
-                      <a
-                        href={(PERSONAL_INFO.social as any).resume}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Resume"
-                        className={socialIconClass}
-                      >
-                        <FileText className="w-6 h-6" />
-                      </a>
+                      <ResumeMenu
+                        side="bottom"
+                        align="left"
+                        triggerClassName={socialIconClass}
+                      />
                       <a
                         href={PERSONAL_INFO.social.github}
                         target="_blank"
