@@ -350,7 +350,7 @@ export const EXPERIENCES: Experience[] = [
         alt: "Classroom",
       }, 
       {
-        src: `${ASSETS_URL}/fcms/5.png`,
+        src: `${ASSETS_URL}/fcms/8.jpg`,
         alt: "Cookie printed via Arduino-powered 3D printer, controlled with C++ code",
       }, 
     ],
