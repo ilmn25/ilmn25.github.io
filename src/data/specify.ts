@@ -6,38 +6,38 @@ export interface SpecifyStep {
   imageUrl?: string;
 }
 
-const SPA_BASE = `${ASSETS_URL}/spa`;
+const SPECIFY_BASE = `${ASSETS_URL}/specify`;
 
 export const SPECIFY_STEPS: SpecifyStep[] = [
   {
     title: "HTML Tree Extraction",
     description:
       "Scrape the DOM structure of Single Page Applications to extract HTML, CSS, and static content.",
-    imageUrl: `${SPA_BASE}/1.png`,
+    imageUrl: `${SPECIFY_BASE}/1.png`,
   },
   {
     title: "Contextual Analysis",
     description:
       "Identify the title, accent colors, and a full list of routes that needs specification to be generated in the next step.",
-    imageUrl: `${SPA_BASE}/2.png`,
+    imageUrl: `${SPECIFY_BASE}/2.png`,
   },
   {
     title: "Specification Generation",
     description:
       "Produces a highly detailed document for each route, creating a structured outline for the contents of each section of each page.",
-    imageUrl: `${SPA_BASE}/3.png`,
+    imageUrl: `${SPECIFY_BASE}/3.png`,
   },
   {
     title: "Asset Normalization",
     description:
       "Cleans up messy asset names and paths into a consistent, organized structure for the new environment.",
-    imageUrl: `${SPA_BASE}/4.png`,
+    imageUrl: `${SPECIFY_BASE}/4.png`,
   },
   {
     title: "Rebuild in Google AI Studio",
     description:
       "Upload the documents into a new project, and generate the website based on the specifications",
-    imageUrl: `${SPA_BASE}/5.png`,
+    imageUrl: `${SPECIFY_BASE}/5.png`,
   },
 ];
 
