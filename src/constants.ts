@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
     "CS student specializing in cloud-hosted services, enterprise systems, and AI-powered tools.",
   description1: "CS student specializing in",
   description2: "cloud-hosted services, enterprise",
-  description3: "systems, and AI-powered tools.",
+  description3: "systems, AI-powered Systems and Automation.",
   education:
     "BSc (Hons) in Computer Science + Minor in Japanese @ The Hong Kong Polytechnic University Sep 2023 – Jul 2027",
   degree: "BSc (Hons) in Computer Science + Minor in Japanese",
@@ -58,7 +58,6 @@ export const SKILLS: SkillGroup[] = [
     category: "Programming Languages",
     skills: [
       "Python",
-      "R",
       "Lua",
       "Java",
       "C#",
@@ -67,6 +66,8 @@ export const SKILLS: SkillGroup[] = [
       "CSS",
       "JS/TS",
       "SQL",
+      "VBS",
+      "Bash",
     ],
   },
   {
@@ -88,8 +89,7 @@ export const SKILLS: SkillGroup[] = [
       "Node.js",
       "React",
       "React Native",
-      "Flask",
-      "FastAPI",
+      "Flask/FastAPI",
       "Next.js",
       "Vite",
       "Tailwind CSS",
@@ -104,20 +104,21 @@ export const SKILLS: SkillGroup[] = [
       "GitHub Actions",
       "Supabase",
       "Vercel",
-      "Cloudflare",
       "AWS (IAM, ECS, ECR, S3)",
+      "Redis",
     ],
   },
   {
     category: "Tools",
     skills: [
+      "Framer",
+      "Zapier",
       "VMWare",
-      "VirtualBox",
+      "Cloudflare",
+      "Windows Server",
       "Excel/Word",
-      "Photoshop",
-      "AfterEffects",
+      "Photoshop/AfterEffects",
       "Figma",
-      "Lark",
     ],
   },
 ];
@@ -150,9 +151,11 @@ export const PROJECTS: Project[] = [
       alt: "Disbatch post composer interface",
     },
     tags: [
-      "FastAPI",
+      "Python",
       "React",
-      "AWS",
+      "FastAPI",
+      "RESTful API",
+      "AWS (ECS, ECR, S3)",
       "Docker",
       "MongoDB",
       "Tailwind",
@@ -160,7 +163,7 @@ export const PROJECTS: Project[] = [
     ],
     highlights: [
       "Developed a marketing automation tool for Discord, reducing manual labour of bulk messaging from hours to just minutes.",
-      "Designed containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
+      "Built containerized CI/CD Pipeline using Docker and GitHub Actions, Automating AWS ECS Fargate deployments.",
     ],
     links: [
       { label: "GitHub Repo", url: "https://github.com/ilmn25/251128" },
@@ -176,10 +179,18 @@ export const PROJECTS: Project[] = [
       src: `${ASSETS_URL}/morimori/1.png`,
       alt: "Morimori procedural world populated with characters",
     },
-    tags: ["Unity", "C#"],
+    tags: [
+      "Unity",
+      "C#",
+      "3D Pathfinding",
+      "FSM",
+      "Physics Simulation",
+      "Procedural Generation",
+    ],
     highlights: [
       "Built an optimized map partitioning system that manages world data in 3D chunks, enabling vast procedural world generation.",
-      "Achieved 200-400 FPS on integrated graphics through Unity Job System parallelization and Burst Compiler optimization.",
+      "Designed interconnected pathfinding and behavioral algorithms to overcome limitations in Unity’s NavMesh.",
+      "Achieved 200-400 FPS on mid-range through Unity Job System parallelization and Burst Compiler optimization.",
     ],
     links: [{ label: "GitHub Repo", url: "https://github.com/ilmn25/240809" }],
   },
@@ -234,13 +245,15 @@ export const PROJECTS: Project[] = [
     highlights: [
       "Hosted on custom via Cloudflare and Github Pages",
       "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
-      "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.", 
+      "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.",
     ],
-    links: [{ label: "ilmnn.net", url: "https://ilmnn.net/illustrations/colored" }],
+    links: [
+      { label: "ilmnn.net", url: "https://ilmnn.net/illustrations/colored" },
+    ],
   },
 ];
 
-export const EXPERIENCES: Experience[] = [ 
+export const EXPERIENCES: Experience[] = [
   {
     company: "HK Hospital Authority",
     role: "Intern - Technical Infrastructure Services",
@@ -259,8 +272,8 @@ export const EXPERIENCES: Experience[] = [
       "Excel",
     ],
     description: [
-      "Engineered automated pipelines to handle daily inventory updates, SSH key provisioning, Networker backup scheduling, and deadline reminders, significantly reducing operational overhead.",
-      "Automated the validation of network configuration, storage allocations, and account privilege across new servers, saving hours of review and auditing and preventing human checking error.",
+      "Engineered automated pipelines to collect and sanitize storage server lists for adjacent teams and generate NetWorker upgrade schedules from backup logs, eliminating months of manual processing.",
+      "Built automated pre-deployment checks to validate network configurations, storage allocations, and account privileges across new servers, speeding up provisioning and preventing human error.",
     ],
     images: [
       {
@@ -275,9 +288,9 @@ export const EXPERIENCES: Experience[] = [
     active: true,
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "AI Project Assistant",
-    period: "Jul. 2026 – Jun. 2027",
+    company: "Faculty of Computing and Mathematics, PolyU",
+    role: "AI Software Engineer (Student Assistant)",
+    period: "Oct. 2026 – Jun. 2027",
     type: "Part-time",
     featured: true,
     tags: [
@@ -285,12 +298,13 @@ export const EXPERIENCES: Experience[] = [
       "TypeScript",
       "FastAPI",
       "Docker",
+      "GitHub Actions",
       "AI Orchestration",
       "Video Generation",
     ],
     description: [
-      "Collaborating on a faculty research project to engineer an autonomous pipeline that generates personalized AI educational content for diverse user profiles.",
-      "Formulating multi-shot prompt architectures and script generation workflows to dynamically adjust lesson pacing, tone, and complexity based on target demographics.",
+      "Collaborating on a faculty research project to develop an on-demand, personalized AI educational content platform, researched and advised professors on optimal technology stacks and AI model providers.",
+      "Engineered backend pipelines incorporating structured visual references, system prompts, and clip sequencing to ensure reproducible, high-quality visual and narrative consistency across multi-scene video outputs.",
     ],
     images: [
       {
@@ -303,15 +317,16 @@ export const EXPERIENCES: Experience[] = [
       },
     ],
     active: true,
-  }, 
+  },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "Data Science Project Assistant",
-    period: "Nov. 2027",
+    company: "Faculty of Computing and Mathematics, PolyU",
+    role: "Faculty AI Project Assistant",
+    period: "Nov. 2026",
     type: "Part-time",
-    featured: false, 
+    featured: false,
+    tags: ["React", "Linux"],
     description: [
-      "Recorded accelerometer telemetry and synchronized video footage from official Hong Kong national football team athletes for AI training dataset generation."
+      "Collected and synchronized accelerometer telemetry and video footage from Hong Kong national football team athletes to generate training datasets for a faculty AI research project.",
     ],
     images: [
       {
@@ -326,12 +341,19 @@ export const EXPERIENCES: Experience[] = [
     active: false,
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "PolyU Info Day Student Assistant",
-    period: "Oct. 2026",
+    company: "Faculty of Computing and Mathematics, PolyU",
+    role: "School Events Helper",
+    period: "Jul. 2026 – Oct. 2026",
     type: "Part-time",
     description: [
-      "Answered questions and provided guidance to prospective students and their families during the PolyU Info Day event.",
+      "Answered questions and provided guidance to prospective students and their families at the COMP Scheme Booth during the PolyU Info Day event.",
+      "Assisted in the setting up and operations of the PolyU Young Minds in Computer and Mathematical Sciences Competition.",
+    ],
+    images: [
+      {
+        src: `${ASSETS_URL}/fcms/3.jpg`,
+        alt: "IT Lab where a stage of the competition was held",
+      },
     ],
   },
   {
@@ -348,16 +370,16 @@ export const EXPERIENCES: Experience[] = [
       {
         src: `${ASSETS_URL}/fcms/4.jpg`,
         alt: "Classroom",
-      }, 
+      },
       {
         src: `${ASSETS_URL}/fcms/8.jpg`,
-        alt: "Cookie printed via Arduino-powered 3D printer, controlled with C++ code",
+        alt: "Arduino-powered 3D printer, controlled with C++ code",
       }, 
     ],
   },
   {
     company: "Time Super Centre",
-    role: "Full Stack Developer & IT Support",
+    role: "Full Stack Developer",
     period: "Jan. 2026 – Jun. 2026",
     type: "Part-time",
     featured: true,
@@ -393,23 +415,8 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "CMS Competition Student Assistant",
-    period: "Jun. 2026",
-    type: "Part-time",
-    description: [
-      "Assisted in the operations of the PolyU Young Minds in Computer and Mathematical Sciences Competition",
-    ],
-    images: [
-      {
-        src: `${ASSETS_URL}/fcms/3.jpg`,
-        alt: "IT Lab where a stage of the competition was held",
-      }, 
-    ],
-  },
-  {
     company: "AWIL Group Limited",
-    role: "Software Engineer - Winter Intern",
+    role: "Software Engineering Intern",
     period: "Dec. 2025 - Jan. 2026",
     type: "Full-time",
     featured: true,
@@ -430,7 +437,8 @@ export const EXPERIENCES: Experience[] = [
     company: "Freelance",
     role: "Digital Illustrator",
     period: "Aug. 2022 - present",
-    type: "Part-time", 
+    type: "Part-time",
+    tags: ["Photoshop", "AfterEffects"],
     description: [
       "Secured repeat clients by consistently delivering high‑quality sketches and character art on time.",
       "Independently managed project lifecycles across multiple clients, overseeing communication, revisions, and final delivery.",
@@ -438,8 +446,8 @@ export const EXPERIENCES: Experience[] = [
     images: [
       {
         src: `${ASSETS_URL}/illustrations/sketch/17.png`,
-        alt: "IT Lab where a stage of the competit  ion was held",
-      }, 
+        alt: "Digital character sketch illustration",
+      },
     ],
   },
 ];
