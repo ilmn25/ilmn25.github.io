@@ -10,7 +10,7 @@ export const PERSONAL_INFO = {
     "CS student specializing in cloud-hosted services, enterprise systems, and AI-powered tools.",
   description1: "CS student specializing in",
   description2: "cloud-hosted services, enterprise",
-  description3: "systems, and AI-powered tools.",
+  description3: "systems, AI-powered Systems and Automation.",
   education:
     "BSc (Hons) in Computer Science + Minor in Japanese @ The Hong Kong Polytechnic University Sep 2023 – Jul 2027",
   degree: "BSc (Hons) in Computer Science + Minor in Japanese",
