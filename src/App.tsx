@@ -10,6 +10,7 @@ import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
 import ImageViewer from "./components/ImageViewer";
+import ResumeMenu from "./components/ResumeMenu";
 import {
   PERSONAL_INFO,
   PROJECTS,
@@ -19,7 +20,6 @@ import {
 import {
   Github,
   ChevronDown,
-  FileText,
   ExternalLink,
   Expand,
 } from "lucide-react";
@@ -35,6 +35,14 @@ type PortfolioView =
 const BASE_PATH = window.location.pathname.startsWith("/ilmn25")
   ? "/ilmn25"
   : "";
+
+const PROJECT_VIEWS: Record<string, PortfolioView> = {
+  morimori: "morimori",
+  counter: "counter",
+  disbatch: "disbatch",
+  specify: "specify",
+  illubot: "illubot",
+};
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -62,16 +70,8 @@ const App: React.FC = () => {
       const mainRoute = parts[0];
       const subRoute = parts[1];
 
-      const projectPages: Record<string, PortfolioView> = {
-        morimori: "morimori",
-        counter: "counter",
-        disbatch: "disbatch",
-        specify: "specify",
-        illubot: "illubot",
-      };
-
-      if (projectPages[mainRoute]) {
-        setView(projectPages[mainRoute]);
+      if (PROJECT_VIEWS[mainRoute]) {
+        setView(PROJECT_VIEWS[mainRoute]);
         window.scrollTo({ top: 0, behavior: "instant" });
       } else {
         // If we were in a project view, switch back to portfolio
@@ -229,15 +229,7 @@ const App: React.FC = () => {
       return;
     }
 
-    const projectPages: Record<string, PortfolioView> = {
-      morimori: "morimori",
-      counter: "counter",
-      disbatch: "disbatch",
-      specify: "specify",
-      illubot: "illubot",
-    };
-
-    const targetView = projectPages[projectId] || "portfolio";
+    const targetView = PROJECT_VIEWS[projectId] || "portfolio";
     const targetPath = `/${projectId}`;
 
     executeCoolTransition(() => {
@@ -369,15 +361,11 @@ const App: React.FC = () => {
 
                   <RevealOnScroll direction="up" delay={600}>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10">
-                      <a
-                        href={(PERSONAL_INFO.social as any).resume}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Resume"
-                        className={socialIconClass}
-                      >
-                        <FileText className="w-6 h-6" />
-                      </a>
+                      <ResumeMenu
+                        side="bottom"
+                        align="left"
+                        triggerClassName={socialIconClass}
+                      />
                       <a
                         href={PERSONAL_INFO.social.github}
                         target="_blank"
@@ -587,18 +575,36 @@ const App: React.FC = () => {
                         )}
                         {exp.links && exp.links.length > 0 && (
                           <div className="flex flex-wrap gap-3 mt-auto pt-4 border-t border-slate-50">
-                            {exp.links.map((link, j) => (
-                              <a
-                                key={j}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-slate-600 transition-all"
-                              >
-                                <ExternalLink className="w-3.5 h-3.5" />
-                                {link.label}
-                              </a>
-                            ))}
+                            {exp.links.map((link, j) => {
+                              const isInternal = link.url.startsWith("/");
+                              return (
+                                <a
+                                  key={j}
+                                  href={
+                                    isInternal
+                                      ? `${BASE_PATH}${link.url}`
+                                      : link.url
+                                  }
+                                  target={isInternal ? undefined : "_blank"}
+                                  rel={
+                                    isInternal
+                                      ? undefined
+                                      : "noopener noreferrer"
+                                  }
+                                  onClick={(e) => {
+                                    if (!isInternal) return;
+                                    e.preventDefault();
+                                    handleProjectClick(
+                                      link.url.slice(1).split("/")[0],
+                                    );
+                                  }}
+                                  className="flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-slate-600 transition-all"
+                                >
+                                  <ExternalLink className="w-3.5 h-3.5" />
+                                  {link.label}
+                                </a>
+                              );
+                            })}
                           </div>
                         )}
                       </div>

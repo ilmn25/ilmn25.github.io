@@ -28,6 +28,7 @@ export const PERSONAL_INFO = {
     github: "https://github.com/ilmn25",
     resume:
       "https://docs.google.com/document/d/1EXzindBoId3J1ePtDNtXYuC0-K_bDDBOZi4cdc-akdk/edit?usp=sharing",
+    cv: "https://docs.google.com/document/d/1EXzindBoId3J1ePtDNtXYuC0-K_bDDBOZi4cdc-akdk/edit?tab=t.y8yet742xmnd",
   },
 };
 
@@ -363,9 +364,9 @@ export const EXPERIENCES: Experience[] = [
         alt: "Classroom",
       },
       {
-        src: `${ASSETS_URL}/fcms/5.png`,
+        src: `${ASSETS_URL}/fcms/8.jpg`,
         alt: "Arduino-powered 3D printer, controlled with C++ code",
-      },
+      }, 
     ],
   },
   {
