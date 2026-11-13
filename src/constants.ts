@@ -151,9 +151,11 @@ export const PROJECTS: Project[] = [
       alt: "Disbatch post composer interface",
     },
     tags: [
-      "FastAPI",
+      "Python",
       "React",
-      "AWS",
+      "FastAPI",
+      "RESTful API",
+      "AWS (ECS, ECR, S3)",
       "Docker",
       "MongoDB",
       "Tailwind",
@@ -271,8 +273,8 @@ export const EXPERIENCES: Experience[] = [
       "Excel",
     ],
     description: [
-      "Engineered automated pipelines to handle daily inventory updates, SSH key provisioning, Networker backup scheduling, and deadline reminders, significantly reducing operational overhead.",
-      "Automated the validation of network configuration, storage allocations, and account privilege across new servers, saving hours of review and auditing and preventing human checking error.",
+      "Engineered automated pipelines to collect and sanitize storage server lists for adjacent teams and generate NetWorker upgrade schedules from backup logs, eliminating months of manual processing.",
+      "Built automated pre-deployment checks to validate network configurations, storage allocations, and account privileges across new servers, speeding up provisioning and preventing human error.",
     ],
     images: [
       {
@@ -287,7 +289,7 @@ export const EXPERIENCES: Experience[] = [
     active: true,
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
+    company: "Faculty of Computing and Mathematics, PolyU",
     role: "AI Software Engineer (Student Assistant)",
     period: "Oct. 2026 – Jun. 2027",
     type: "Part-time",
@@ -302,8 +304,8 @@ export const EXPERIENCES: Experience[] = [
       "Video Generation",
     ],
     description: [
-      "Collaborating on a faculty research project to engineer an autonomous pipeline that generates personalized AI educational content for diverse user profiles.",
-      "Formulating multi-shot prompt architectures and script generation workflows to dynamically adjust lesson pacing, tone, and complexity based on target demographics.",
+      "Collaborating on a faculty research project to develop an on-demand, personalized AI educational content platform, researched and advised professors on optimal technology stacks and AI model providers.",
+      "Engineered backend pipelines incorporating structured visual references, system prompts, and clip sequencing to ensure reproducible, high-quality visual and narrative consistency across multi-scene video outputs.",
     ],
     images: [
       {
@@ -318,8 +320,8 @@ export const EXPERIENCES: Experience[] = [
     active: true,
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "Data Science Project Assistant",
+    company: "Faculty of Computing and Mathematics, PolyU",
+    role: "Faculty AI Project Assistant",
     period: "Nov. 2026",
     type: "Part-time",
     featured: false,
@@ -340,12 +342,19 @@ export const EXPERIENCES: Experience[] = [
     active: false,
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "PolyU Info Day Student Assistant",
-    period: "Oct. 2026",
+    company: "Faculty of Computing and Mathematics, PolyU",
+    role: "School Events Helper",
+    period: "Jul. 2026 – Oct. 2026",
     type: "Part-time",
     description: [
-      "Answered questions and provided guidance to prospective students and their families at the COMP Booth during the PolyU Info Day event.",
+      "Answered questions and provided guidance to prospective students and their families at the COMP Scheme Booth during the PolyU Info Day event.",
+      "Assisted in the setting up and operations of the PolyU Young Minds in Computer and Mathematical Sciences Competition.",
+    ],
+    images: [
+      {
+        src: `${ASSETS_URL}/fcms/3.jpg`,
+        alt: "IT Lab where a stage of the competition was held",
+      },
     ],
   },
   {
@@ -371,7 +380,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     company: "Time Super Centre",
-    role: "Full Stack Developer & IT Support",
+    role: "Full Stack Developer",
     period: "Jan. 2026 – Jun. 2026",
     type: "Part-time",
     featured: true,
@@ -407,23 +416,8 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    company: "FCMS, The Hong Kong Polytechnic University",
-    role: "CMS Competition Student Assistant",
-    period: "Jun. 2026",
-    type: "Part-time",
-    description: [
-      "Assisted in the setting up and operations of the PolyU Young Minds in Computer and Mathematical Sciences Competition.",
-    ],
-    images: [
-      {
-        src: `${ASSETS_URL}/fcms/3.jpg`,
-        alt: "IT Lab where a stage of the competition was held",
-      },
-    ],
-  },
-  {
     company: "AWIL Group Limited",
-    role: "Software Engineer - Winter Intern",
+    role: "Software Engineering Intern",
     period: "Dec. 2025 - Jan. 2026",
     type: "Full-time",
     featured: true,
