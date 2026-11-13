@@ -10,7 +10,6 @@ import {
   Database,
   Languages,
   Layout,
-  ExternalLink,
 } from "lucide-react";
 import {
   DISBATCH_HIGHLIGHTS,
@@ -126,15 +125,6 @@ const DisbatchProjectPage: React.FC<DisbatchProjectPageProps> = ({ onBack }) => 
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                  <a
-                    href="https://portfolio.ilmnn.net/Disbatch/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-bold hover:bg-black transition-all hover:scale-105 shadow-xl shadow-slate-200 flex items-center gap-2"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    View Landing Page
-                  </a>
                   <a
                     href="https://github.com/ilmn25/251128"
                     target="_blank"

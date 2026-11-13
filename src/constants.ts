@@ -163,7 +163,6 @@ export const PROJECTS: Project[] = [
       "Designed containerized CI/CD workflows using Docker and GitHub Actions, streamlining AWS ECS Fargate deployments into a single command.",
     ],
     links: [
-      { label: "Landing Page", url: "https://portfolio.ilmnn.net/Disbatch/" },
       { label: "GitHub Repo", url: "https://github.com/ilmn25/251128" },
     ],
   },
