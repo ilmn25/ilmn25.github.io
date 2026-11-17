@@ -362,8 +362,6 @@ const App: React.FC = () => {
                   <RevealOnScroll direction="up" delay={600}>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-10">
                       <ResumeMenu
-                        side="bottom"
-                        align="left"
                         triggerClassName={socialIconClass}
                       />
                       <a

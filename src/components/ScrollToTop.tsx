@@ -46,8 +46,6 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({ className = "" }) => {
         </button>
 
         <ResumeMenu
-          side="top"
-          align="right"
           rootClassName={`transition-transform duration-300 ease-out ${isVisible ? "-translate-x-[3.75rem]" : "translate-x-0"}`}
           triggerClassName="block p-3 bg-white hover:bg-slate-50 text-slate-900 rounded-full shadow-2xl border border-slate-200 group active:scale-90"
         />
