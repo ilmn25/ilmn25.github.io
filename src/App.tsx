@@ -7,6 +7,7 @@ import DisbatchProjectPage from "./components/DisbatchProjectPage";
 import SpecifyProjectPage from "./components/SpecifyProjectPage";
 import IllubotProjectPage from "./components/IllubotProjectPage";
 import AiVideoProjectPage from "./components/AiVideoProjectPage";
+import PathfindingProjectPage from "./components/PathfindingProjectPage";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
@@ -32,7 +33,8 @@ type PortfolioView =
   | "disbatch"
   | "specify"
   | "illubot"
-  | "ai-video";
+  | "ai-video"
+  | "pathfinding";
 
 const BASE_PATH = window.location.pathname.startsWith("/ilmn25")
   ? "/ilmn25"
@@ -45,6 +47,7 @@ const PROJECT_VIEWS: Record<string, PortfolioView> = {
   specify: "specify",
   illubot: "illubot",
   "ai-video": "ai-video",
+  pathfinding: "pathfinding",
 };
 
 const App: React.FC = () => {
@@ -249,7 +252,24 @@ const App: React.FC = () => {
 
     switch (view) {
       case "morimori":
-        return <MorimoriProjectPage onBack={backAction} />;
+        return (
+          <MorimoriProjectPage
+            onBack={backAction}
+            onOpenPathfinding={() =>
+              executeCoolTransition(() =>
+                navigate("/pathfinding", "pathfinding"),
+              )
+            }
+          />
+        );
+      case "pathfinding":
+        return (
+          <PathfindingProjectPage
+            onBack={() =>
+              executeCoolTransition(() => navigate("/morimori", "morimori"))
+            }
+          />
+        );
       case "counter":
         return <CounterProjectPage onBack={backAction} />;
       case "disbatch":

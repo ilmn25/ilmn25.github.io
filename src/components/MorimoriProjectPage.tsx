@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import {
   ArrowLeft,
+  ArrowRight,
   Code2,
   ExternalLink,
   Gamepad2,
   Layers,
   Cpu,
   Code,
+  Route,
   ZoomIn,
   Play,
   Video,
@@ -21,9 +23,13 @@ import ImageViewer from "./ImageViewer";
 
 interface MorimoriProjectPageProps {
   onBack: () => void;
+  onOpenPathfinding?: () => void;
 }
 
-const MorimoriProjectPage: React.FC<MorimoriProjectPageProps> = ({ onBack }) => {
+const MorimoriProjectPage: React.FC<MorimoriProjectPageProps> = ({
+  onBack,
+  onOpenPathfinding,
+}) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -77,6 +83,16 @@ const MorimoriProjectPage: React.FC<MorimoriProjectPageProps> = ({ onBack }) => 
                 A technical game project showcase focusing on procedural systems, pathfinding
                 algorithms, and optimization within the Unity engine.
               </p>
+              {onOpenPathfinding && (
+                <button
+                  onClick={onOpenPathfinding}
+                  className="group mt-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] font-bold text-slate-900 transition-all hover:border-slate-300 hover:shadow-sm"
+                >
+                  <Route className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 transition-colors" />
+                  3D chunk &amp; pathfinding deep dive
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                </button>
+              )}
             </header>
           </RevealOnScroll>
 
@@ -234,6 +250,15 @@ const MorimoriProjectPage: React.FC<MorimoriProjectPageProps> = ({ onBack }) => 
                   <ExternalLink className="w-3.5 h-3.5" />
                   Download Build
                 </a>
+                {onOpenPathfinding && (
+                  <button
+                    onClick={onOpenPathfinding}
+                    className="flex items-center gap-2 px-6 py-2.5 bg-white text-slate-900 border border-slate-200 rounded-full text-xs font-bold hover:bg-slate-50 transition-all hover:scale-105"
+                  >
+                    <Route className="w-3.5 h-3.5" />
+                    World &amp; Pathfinding Deep Dive
+                  </button>
+                )}
               </div>
             </div>
           </RevealOnScroll>
