@@ -314,6 +314,7 @@ export const EXPERIENCES: Experience[] = [
         alt: "Script and prompt editor pre-render",
       },
     ],
+    links: [{ label: "Pipeline Diagram", url: "/ai-video" }],
     active: true,
   },
   {

@@ -6,6 +6,7 @@ import CounterProjectPage from "./components/CounterProjectPage";
 import DisbatchProjectPage from "./components/DisbatchProjectPage";
 import SpecifyProjectPage from "./components/SpecifyProjectPage";
 import IllubotProjectPage from "./components/IllubotProjectPage";
+import AiVideoProjectPage from "./components/AiVideoProjectPage";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
@@ -30,7 +31,8 @@ type PortfolioView =
   | "counter"
   | "disbatch"
   | "specify"
-  | "illubot";
+  | "illubot"
+  | "ai-video";
 
 const BASE_PATH = window.location.pathname.startsWith("/ilmn25")
   ? "/ilmn25"
@@ -42,6 +44,7 @@ const PROJECT_VIEWS: Record<string, PortfolioView> = {
   disbatch: "disbatch",
   specify: "specify",
   illubot: "illubot",
+  "ai-video": "ai-video",
 };
 
 const App: React.FC = () => {
@@ -255,6 +258,8 @@ const App: React.FC = () => {
         return <SpecifyProjectPage onBack={backAction} />;
       case "illubot":
         return <IllubotProjectPage onBack={backAction} />;
+      case "ai-video":
+        return <AiVideoProjectPage onBack={backAction} />;
       default:
         return null;
     }
