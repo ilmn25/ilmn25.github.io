@@ -22,35 +22,35 @@ export const ILLUBOT_FEATURES: IllubotFeature[] = [
     description:
       "Switch seamlessly between Azure, GitHub Models, Google Gemini, or Ollama for cost, latency, or capability.",
     iconType: "zap",
-    image: `${ILLUBOT_BASE}/1.png`,
+    image: `${ILLUBOT_BASE}/1.webp`,
   },
   {
     title: "Google Calendar Integration",
     description:
       "Read, create, update and delete calendar events via the official Google Calendar API.",
     iconType: "calendar",
-    image: `${ILLUBOT_BASE}/2.png`,
+    image: `${ILLUBOT_BASE}/2.webp`,
   },
   {
     title: "Voice Activation & Discord Interfaces",
     description:
       "Interact with the agent anywhere as a Discord bot, or by talking to it via Voice Activation.",
     iconType: "terminal",
-    image: `${ILLUBOT_BASE}/3.png`,
+    image: `${ILLUBOT_BASE}/3.webp`,
   },
   {
     title: "Extensible Skill System",
     description:
       "Built on MCP, the agent can load and run skills like calendar operations, utility commands, and more.",
     iconType: "puzzle",
-    image: `${ILLUBOT_BASE}/4.png`,
+    image: `${ILLUBOT_BASE}/4.webp`,
   },
   {
     title: "Persistent Context & Memory",
     description:
       "Optional RAG memory backed by Pinecone allows the agent to recall previous conversations and data.",
     iconType: "database",
-    image: `${ILLUBOT_BASE}/5.png`,
+    image: `${ILLUBOT_BASE}/5.webp`,
   },
 ];
 
@@ -77,9 +77,9 @@ export const ILLUBOT_STRUCTURED_STACK = [
 ];
 
 export const ILLUBOT_GALLERY = [
-  `${ILLUBOT_BASE}/1.png`,
-  `${ILLUBOT_BASE}/2.png`,
-  `${ILLUBOT_BASE}/3.png`,
-  `${ILLUBOT_BASE}/4.png`,
-  `${ILLUBOT_BASE}/5.png`,
+  `${ILLUBOT_BASE}/1.webp`,
+  `${ILLUBOT_BASE}/2.webp`,
+  `${ILLUBOT_BASE}/3.webp`,
+  `${ILLUBOT_BASE}/4.webp`,
+  `${ILLUBOT_BASE}/5.webp`,
 ];

@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { MORIMORI_GALLERY, MORIMORI_FEATURES } from "../data/morimori";
-import { COUNTER_GALLERY, COUNTER_FEATURES } from "../data/counter";
-import { DISBATCH_GALLERY } from "../data/disbatch";
-import { SPECIFY_STEPS } from "../data/specify";
 import { PERSONAL_INFO } from "../constants";
 
-const BATCH_SIZE = 150; // Parallel load batches to balance speed and browser performance
-const MAX_LOAD_TIME = 1000; // 6 seconds time limit
+// Only the above-the-fold hero image blocks the first paint. Every gallery
+// image lazy-loads as the user scrolls.
+const CRITICAL_ASSETS = [PERSONAL_INFO.avatar];
+const MIN_DISPLAY_MS = 400; // keeps the intro animation from flashing
+const MAX_LOAD_TIME = 6000; // never hold the page hostage for longer than this
 
 interface PreloaderProps {
   onComplete: () => void;
@@ -16,90 +15,60 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const hasTriggeredComplete = useRef(false);
+  const startedAt = useRef(Date.now());
 
   useEffect(() => {
-    // 1. Gather all assets that MUST be loaded before showing the page
-    const allAssets = [
-      PERSONAL_INFO.avatar,
-      ...MORIMORI_FEATURES.map((f) => f.media.thumbnailUrl),
-      ...COUNTER_FEATURES.map((f) => f.image),
-      ...SPECIFY_STEPS.map((s) => s.imageUrl),
-      ...MORIMORI_GALLERY,
-      ...COUNTER_GALLERY,
-      ...DISBATCH_GALLERY,
-    ].filter((url): url is string => typeof url === "string");
-
-    const uniqueAssets = Array.from(new Set(allAssets));
-    const totalAssets = uniqueAssets.length;
-    let loadedCount = 0;
-
     const triggerComplete = () => {
       if (hasTriggeredComplete.current) return;
       hasTriggeredComplete.current = true;
 
       setProgress(100);
 
-      // Small visual buffer so the user sees 100% for a moment
+      const remaining = Math.max(
+        0,
+        MIN_DISPLAY_MS - (Date.now() - startedAt.current),
+      );
+
       setTimeout(() => {
         setIsVisible(false);
         setTimeout(onComplete, 600);
-      }, 800);
+      }, remaining + 200);
     };
 
-    // 6-second safety timeout
     const timeoutId = setTimeout(() => {
       if (!hasTriggeredComplete.current) {
         console.warn(
-          "Preloader: Asset loading timed out after 6 seconds. Proceeding to app.",
+          `Preloader: critical assets timed out after ${MAX_LOAD_TIME / 1000} seconds. Proceeding to app.`,
         );
         triggerComplete();
       }
     }, MAX_LOAD_TIME);
 
-    const loadAssets = async () => {
-      if (totalAssets === 0) {
-        triggerComplete();
-        return;
-      }
+    let loadedCount = 0;
 
-      const queue = [...uniqueAssets];
-
-      // Process in batches to prevent browser lock-up and maximize throughput
-      while (queue.length > 0 && !hasTriggeredComplete.current) {
-        const batch = queue.splice(0, BATCH_SIZE);
-        await Promise.all(
-          batch.map((url) => {
-            return new Promise((resolve) => {
-              const img = new Image();
-              img.src = url;
-
-              const handleLoad = () => {
-                loadedCount++;
-                if (!hasTriggeredComplete.current) {
-                  const currentProgress = Math.round(
-                    (loadedCount / totalAssets) * 100,
-                  );
-                  // Don't set progress to 100 here to let triggerComplete handle final state
-                  setProgress(Math.min(currentProgress, 99));
-                }
-                resolve(null);
-              };
-
-              img.onload = handleLoad;
-              img.onerror = handleLoad; // Continue even if an image fails to load
-            });
+    Promise.all(
+      CRITICAL_ASSETS.map(
+        (url) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            const handleDone = () => {
+              loadedCount++;
+              setProgress(
+                Math.min(
+                  Math.round((loadedCount / CRITICAL_ASSETS.length) * 100),
+                  99,
+                ),
+              );
+              resolve();
+            };
+            img.onload = handleDone;
+            img.onerror = handleDone; // a failed image must not block the page
+            img.src = url;
           }),
-        );
-
-        // Safety check: if all are loaded
-        if (loadedCount >= totalAssets) {
-          triggerComplete();
-          break;
-        }
-      }
-    };
-
-    loadAssets();
+      ),
+    ).then(() => {
+      if (!hasTriggeredComplete.current) triggerComplete();
+    });
 
     return () => clearTimeout(timeoutId);
   }, [onComplete]);

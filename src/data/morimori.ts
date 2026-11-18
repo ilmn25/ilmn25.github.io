@@ -20,7 +20,7 @@ export const MORIMORI_FEATURES: MorimoriFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=dUQk0CVaHIA",
-      thumbnailUrl: `${MORIMORI_BASE}/15.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/15.webp`,
     },
   },
   {
@@ -30,7 +30,7 @@ export const MORIMORI_FEATURES: MorimoriFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=cHSwMKmvdKo",
-      thumbnailUrl: `${MORIMORI_BASE}/22.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/22.webp`,
     },
   },
   {
@@ -40,7 +40,7 @@ export const MORIMORI_FEATURES: MorimoriFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=pHN1In7Jz3c",
-      thumbnailUrl: `${MORIMORI_BASE}/1.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/1.webp`,
     },
   },
   {
@@ -50,7 +50,7 @@ export const MORIMORI_FEATURES: MorimoriFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=h6h2cAwZeKU",
-      thumbnailUrl: `${MORIMORI_BASE}/18.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/18.webp`,
     },
   },
   {
@@ -60,7 +60,7 @@ export const MORIMORI_FEATURES: MorimoriFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=1PNA1rKgP9I",
-      thumbnailUrl: `${MORIMORI_BASE}/10.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/10.webp`,
     },
   },
   {
@@ -70,7 +70,7 @@ export const MORIMORI_FEATURES: MorimoriFeature[] = [
     media: {
       type: "video",
       url: "https://www.youtube.com/watch?v=Y2vqaBKJf1U",
-      thumbnailUrl: `${MORIMORI_BASE}/21.png`,
+      thumbnailUrl: `${MORIMORI_BASE}/21.webp`,
     },
   },
 ];
@@ -106,5 +106,5 @@ const MORIMORI_GALLERY_ORDER = [
 ];
 
 export const MORIMORI_GALLERY = MORIMORI_GALLERY_ORDER.map(
-  (n) => `${MORIMORI_BASE}/${n}.png`,
+  (n) => `${MORIMORI_BASE}/${n}.webp`,
 );

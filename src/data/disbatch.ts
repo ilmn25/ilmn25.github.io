@@ -22,28 +22,28 @@ export const DISBATCH_FEATURES: DisbatchFeature[] = [
     description:
       "Deployed on AWS ECS Fargate with Docker, providing a managed, serverless hosting environment.",
     iconType: "cloud",
-    image: `${DISBATCH_BASE}/8.png`,
+    image: `${DISBATCH_BASE}/8.webp`,
   },
   {
     title: "CI/CD Pipeline",
     description:
       "Ensuring consistent build and deployment to the live environment by automating CI/CD using GitHub Actions.",
     iconType: "zap",
-    image: `${DISBATCH_BASE}/7.png`,
+    image: `${DISBATCH_BASE}/7.webp`,
   },
   {
     title: "Scalable Data Storage",
     description:
       "Utilizes MongoDB for flexible data storage, allowing for efficient handling of highly flexible Discord message structures.",
     iconType: "database",
-    image: `${DISBATCH_BASE}/9.png`,
+    image: `${DISBATCH_BASE}/9.webp`,
   },
   {
     title: "Global & Responsive UI",
     description:
       "A multi-language localization system paired with a fully responsive layout built with Tailwind CSS for cross-device compatibility.",
     iconType: "languages",
-    image: `${DISBATCH_BASE}/1.png`,
+    image: `${DISBATCH_BASE}/1.webp`,
   },
 ];
 
@@ -61,5 +61,5 @@ export const DISBATCH_STRUCTURED_STACK = [
 const DISBATCH_SCREENSHOTS = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 export const DISBATCH_GALLERY = DISBATCH_SCREENSHOTS.map(
-  (n) => `${DISBATCH_BASE}/${n}.png`,
+  (n) => `${DISBATCH_BASE}/${n}.webp`,
 );

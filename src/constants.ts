@@ -1,11 +1,10 @@
 import { Project, Experience, SkillGroup } from "./types";
 
-export const ASSETS_URL =
-  "https://raw.githubusercontent.com/ilmn25/ilmn25.github.io/refs/heads/prod/assets";
+export const ASSETS_URL = `${import.meta.env.BASE_URL}assets`;
 
 export const PERSONAL_INFO = {
   name: "illu",
-  avatar: `${ASSETS_URL}/pfp.png`,
+  avatar: `${ASSETS_URL}/pfp.webp`,
   title:
     "CS student specializing in cloud-hosted services, enterprise systems, and AI-powered tools.",
   description1: "CS student specializing in",
@@ -130,7 +129,7 @@ export const PROJECTS: Project[] = [
       "A high‑performance MCP AI personal agent capable of reducing daily workload for multi‑step digital tasks.",
     category: "ai",
     image: {
-      src: `${ASSETS_URL}/illubot/3.png`,
+      src: `${ASSETS_URL}/illubot/3.webp`,
       alt: "illubot console logs for speech input",
     },
     tags: ["AI Agent", "MCP", "LLM", "RAG", "Pinecone", "Vector DB"],
@@ -146,7 +145,7 @@ export const PROJECTS: Project[] = [
       "A three-tier automated marketing system for Discord that streamlines cross-server posting and deployments.",
     category: "web",
     image: {
-      src: `${ASSETS_URL}/disbatch/1.png`,
+      src: `${ASSETS_URL}/disbatch/1.webp`,
       alt: "Disbatch post composer interface",
     },
     tags: [
@@ -175,7 +174,7 @@ export const PROJECTS: Project[] = [
       "A survival game featuring infinite procedural generation and optimized map partitioning.",
     category: "game",
     image: {
-      src: `${ASSETS_URL}/morimori/1.png`,
+      src: `${ASSETS_URL}/morimori/1.webp`,
       alt: "Morimori procedural world populated with characters",
     },
     tags: [
@@ -200,7 +199,7 @@ export const PROJECTS: Project[] = [
       "A three-tier custom ERP and CRM web application built to streamline Attendance, client communication, and operations management for education centers.",
     category: "web",
     image: {
-      src: `${ASSETS_URL}/counter/18.png`,
+      src: `${ASSETS_URL}/counter/18.webp`,
       alt: "Counter bookings page",
     },
     tags: ["Supabase", "PostgreSQL", "React", "Tailwind", "Stripe"],
@@ -219,7 +218,7 @@ export const PROJECTS: Project[] = [
       "A prompt driven workflow to speed up the migration of legacy SPAs to AI-first IDEs such as Google AI Studio.",
     category: "workflow",
     image: {
-      src: `${ASSETS_URL}/specify/3.png`,
+      src: `${ASSETS_URL}/specify/3.webp`,
       alt: "Generated specification output for a migrated site",
     },
     tags: ["Prompt Engineering", "Specification Generation"],
@@ -237,7 +236,7 @@ export const PROJECTS: Project[] = [
     description: "My digital art portfolio site.",
     category: "art",
     image: {
-      src: `${ASSETS_URL}/illustrations/colored/19.png`,
+      src: `${ASSETS_URL}/illustrations/colored/19.webp`,
       alt: "Colored digital illustration of a character",
     },
     tags: ["cloudflare", "dns", "design"],
@@ -276,11 +275,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/ha/1.jpg`,
+        src: `${ASSETS_URL}/ha/1.webp`,
         alt: "Reception and pantry area of the Hospital Authority office",
       },
       {
-        src: `${ASSETS_URL}/ha/2.jpg`,
+        src: `${ASSETS_URL}/ha/2.webp`,
         alt: "Multi-monitor workstation used for infrastructure automation work",
       },
     ],
@@ -307,11 +306,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/fcms/6.png`,
+        src: `${ASSETS_URL}/fcms/6.webp`,
         alt: "Post-render editor",
       },
       {
-        src: `${ASSETS_URL}/fcms/7.png`,
+        src: `${ASSETS_URL}/fcms/7.webp`,
         alt: "Script and prompt editor pre-render",
       },
     ],
@@ -329,11 +328,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/fcms/1.jpg`,
+        src: `${ASSETS_URL}/fcms/1.webp`,
         alt: "Capture session software tracking accelerometer telemetry beside the training hall",
       },
       {
-        src: `${ASSETS_URL}/fcms/2.jpg`,
+        src: `${ASSETS_URL}/fcms/2.webp`,
         alt: "Sports hall set up with a numbered target board during data collection",
       },
     ],
@@ -350,7 +349,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/fcms/3.jpg`,
+        src: `${ASSETS_URL}/fcms/3.webp`,
         alt: "IT Lab where a stage of the competition was held",
       },
     ],
@@ -367,11 +366,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/fcms/4.jpg`,
+        src: `${ASSETS_URL}/fcms/4.webp`,
         alt: "Classroom",
       },
       {
-        src: `${ASSETS_URL}/fcms/8.jpg`,
+        src: `${ASSETS_URL}/fcms/8.webp`,
         alt: "Arduino-powered 3D printer, controlled with C++ code",
       }, 
     ],
@@ -398,11 +397,11 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/counter/18.png`,
+        src: `${ASSETS_URL}/counter/18.webp`,
         alt: "Reception and pantry area of the Hospital Authority office",
       },
       {
-        src: `${ASSETS_URL}/counter/13.png`,
+        src: `${ASSETS_URL}/counter/13.webp`,
         alt: "Multi-monitor workstation used for infrastructure automation work",
       },
     ],
@@ -444,7 +443,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     images: [
       {
-        src: `${ASSETS_URL}/illustrations/sketch/17.png`,
+        src: `${ASSETS_URL}/illustrations/sketch/17.webp`,
         alt: "Digital character sketch illustration",
       },
     ],

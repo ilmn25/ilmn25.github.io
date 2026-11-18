@@ -22,48 +22,48 @@ export const COUNTER_FEATURES: CounterFeature[] = [
     description:
       "Separate secure portals for parents, teachers, and admins. Provides real-time updates into schedules, payment status, and attendance for relevant users.",
     iconType: "database",
-    image: `${COUNTER_BASE}/1.png`,
+    image: `${COUNTER_BASE}/1.webp`,
   },
   {
     title: "Attendance Automation with External Hardware",
     description:
       "Integration with Fingerprint and Facial Recognition Hardware for hands-free attendance marking.",
     iconType: "shield",
-    image: `${COUNTER_BASE}/19.png`,
+    image: `${COUNTER_BASE}/19.webp`,
   },
   {
     title: "Robust records filtering, sorting, and Data Analysis",
     description:
       "The system detects discrepancies such as unpaid or missed sessions, allowing admins to resolve them by sending invoices, cancelling, or rescheduling at a click of a button.",
     iconType: "import",
-    image: `${COUNTER_BASE}/13.png`,
+    image: `${COUNTER_BASE}/13.webp`,
   },
   {
     title: "Stripe API Integration",
     description:
       "Parents can pay invoices with credit / debit cards online through Stripe.",
     iconType: "shield",
-    image: `${COUNTER_BASE}/25.png`,
+    image: `${COUNTER_BASE}/25.webp`,
   },
   {
     title: "Data Integrity & Rollback",
     description:
       "Implementation of database snapshots and manual rollback systems to ensure administrative errors can be corrected without data loss.",
     iconType: "shield",
-    image: `${COUNTER_BASE}/8.png`,
+    image: `${COUNTER_BASE}/8.webp`,
   },
   {
     title: "Multi-tenant Support",
     description:
       "Built with multiple centres in mind for future-proofing and scalability.",
     iconType: "layout",
-    image: `${COUNTER_BASE}/31.png`,
+    image: `${COUNTER_BASE}/31.webp`,
   },
 ];
 
 export const COUNTER_GALLERY = Array.from(
   { length: 37 },
-  (_, i) => `${COUNTER_BASE}/${i + 1}.png`,
+  (_, i) => `${COUNTER_BASE}/${i + 1}.webp`,
 );
 
 export const COUNTER_GALLERY_GROUPS: Record<string, number[]> = {

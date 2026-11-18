@@ -309,6 +309,8 @@ const App: React.FC = () => {
                       <img
                         src={(PERSONAL_INFO as any).avatar}
                         alt={PERSONAL_INFO.name}
+                        fetchPriority="high"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>
